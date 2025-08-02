@@ -1,0 +1,309 @@
+/* Configurações Globais */
+
+/* Add Patters?
+  - color palette
+  - space orientation,
+  - display base
+ */
+
+body {
+  font-size: 1.25rem;
+  color: white;
+}
+
+/* Listas */
+
+ul,
+ol {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+/* Hover generals */
+
+.fixed-button,
+.carousel-desc-links-icon,
+.navbar-brand,
+.skillIcon,
+.contactIcon {
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+.fixed-button:hover,
+.carousel-desc-links-icon:hover,
+.navbar-brand:hover,
+.skillIcon:hover,
+.contactIcon:hover {
+  transform: translateY(-5px);
+  box-shadow: 2px 2px 12px #b6b6b680;
+}
+
+/* Layout Principal */
+
+.scope {
+  background: radial-gradient(circle, #402474, #1f1f1f);
+}
+
+.sectionMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1% 5%;
+}
+
+/* Títulos */
+
+.titleSection {
+  display: inline;
+  text-align: left;
+  font-size: 2.75rem;
+  margin: 0;
+  padding: 1.5%;
+  color: white;
+}
+
+#contact {
+  padding: 4% 5%;
+}
+
+/* Responsivity */
+
+@media (max-width: 769px) {
+  .sectionMain {
+    padding: 3%;
+  }
+
+  .titleSection {
+    display: flex;
+    font-size: 1.25rem;
+  }
+
+  .textDescription {
+    text-align: justify;
+    margin: 1% 0;
+    padding: 2%;
+  }
+
+  #skills .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .softSkills,
+  .hardSkills {
+    margin: 4% 0;
+  }
+
+  .skillBlock h4 {
+    margin-bottom: 5%;
+  }
+
+  .sectionFooter {
+    padding: 0 6% 2% 6%;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer .titleSection {
+    margin: 0;
+  }
+
+  .contactIcon {
+    color: #517bd6;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.25rem;
+    padding: 25%;
+    border-radius: 0.5rem;
+  }
+
+  .contactIcon:hover {
+    color: #0084ff;
+  }
+
+  .arrow-up i {
+    font-size: 5vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  body {
+    font-size: 1.125rem;
+  }
+
+  .navbar-toggler {
+    padding: 1.5%;
+  }
+
+  .navbar {
+    font-size: 1.25rem;
+    padding: 5%;
+  }
+
+  .headerSub {
+    height: 60%;
+  }
+
+  .devFunctionCol {
+    display: flex;
+  }
+
+  .devFunction {
+    font-size: 3.5rem;
+    margin: auto;
+  }
+
+  .aboutText,
+  .textDescription {
+    font-size: 1rem;
+  }
+
+  .sectionMain {
+    padding: 4%;
+  }
+
+  .titleSection {
+    display: flex;
+    font-size: 1.75rem;
+  }
+
+  .carousel {
+    border-radius: 0.5rem;
+    margin-top: 5%;
+    padding: 2% 0;
+  }
+
+  .carouselProjects {
+    height: 70vh;
+    margin: 0;
+    flex-direction: column;
+    padding: 2% 7.5%;
+  }
+
+  .carouselImageCol,
+  .carouselDescriptionCol {
+    margin: 2% 0;
+  }
+
+  .titleProjectDescription,
+  .textDescription {
+    text-align: justify;
+    margin: 1% 0;
+    padding: 2%;
+  }
+
+  #skills .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .softSkills,
+  .hardSkills {
+    margin: 4% 0;
+  }
+
+  .skillBlock h4 {
+    margin-bottom: 5%;
+  }
+
+  .EBOptions h3 {
+    font-size: 1.2rem;
+  }
+
+  .EBCertifiesList {
+    padding: 0;
+  }
+
+  .EBCols {
+    height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+  }
+
+  .EBColActive {
+    max-height: 100%;
+    animation: showActive 0.9s forwards;
+  }
+
+  .EBColOff {
+    animation: showOff 0.4s forwards;
+  }
+
+  .sectionFooter {
+    padding: 0 6% 2% 6%;
+    display: flex;
+    align-items: center;
+  }
+
+  .contactIcon {
+    color: #517bd6;
+    display: inline-block;
+    margin-left: 8%;
+    font-size: 1.25rem;
+    padding: 3%;
+    border-radius: 0.5rem;
+  }
+
+  .contactIcon:hover {
+    color: #0084ff;
+  }
+
+  footer .titleSection {
+    margin-right: 10%;
+  }
+
+  .arrow-up i {
+    font-size: 5vw;
+  }
+}
+
+/* Animations */
+
+@keyframes boxShadowDark {
+  from {
+    box-shadow: none;
+  }
+
+  to {
+    box-shadow: 2px 2px 8px #3b3b3b;
+  }
+}
+
+@keyframes showActive {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  50% {
+    display: none;
+    opacity: 0;
+  }
+
+  100% {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+@keyframes showOff {
+  from {
+    display: flex;
+    opacity: 1;
+  }
+
+  to {
+    display: none;
+    opacity: 0;
+  }
+}

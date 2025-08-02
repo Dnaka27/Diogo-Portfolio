@@ -1,0 +1,304 @@
+header {
+  position: flex; /* Corrigido para 'flex' */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#nav-style {
+  padding: 2% 3%;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  border-radius: 0.5rem;
+}
+
+.navbar-brand:hover,
+.nav-link:hover {
+  background-color: #77777777;
+  transform: translateY(-5px);
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+}
+
+.my-info {
+  padding: 0% 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: auto;
+}
+
+.my-role {
+  padding: 0 3rem;
+  height: 90%;
+  width: 50%;
+  padding: 0 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.about-me {
+  display: flex;
+  width: 45%;
+  justify-content: center;
+  align-items: center;
+  background-color: #2495ff;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+.my-functions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+}
+
+.function-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-role,
+.secondary-role {
+  padding: 1.5%;
+  font-size: 2.5rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-role {
+  border-bottom: 2px solid #2495ff;
+  border-left: 2px solid #2495ff;
+}
+
+.secondary-role {
+  border-bottom: 2px solid #9d00ff;
+  border-left: 2px solid #9d00ff;
+}
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f1f1f;
+  border: 8px outset #09090a;
+  box-shadow: 6px 6px 15px #27004e;
+}
+
+.about-text {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  justify-content: center;
+  padding: 1rem;
+  margin-left: 1rem;
+  font-size: 2.5rem;
+  text-align: left;
+  margin: 0;
+  font-weight: 100;
+  padding-left: 2.5rem;
+}
+
+.header-stylePY {
+  border-bottom: 2px solid #4800ff;
+}
+
+.header-styleJV {
+  border-bottom: 2px solid #ff0015;
+}
+
+.header-styleJS {
+  border-bottom: 2px solid #ffc800;
+}
+
+.styleEnph {
+  border-bottom: 2px solid white;
+}
+
+/* Botão fixo */
+
+.fixed-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 8px 16px;
+  background-color: #587ac5;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  /* Transição suave para a cor de fundo */
+}
+
+.fixed-button:hover {
+  background-color: #4d43df;
+  color: #fff;
+  /* Cor de fundo ao passar o mouse */
+}
+
+/* Media Queries para Mobile */
+@media (max-width: 768px) {
+  header {
+    max-height: 100vh;
+  }
+
+  #nav-style {
+    padding: 1.25rem;
+  }
+
+  #nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: auto;
+    padding: 1%;
+  }
+
+  #nav-toggler {
+    padding: 1.5%;
+  }
+
+  .navbar-toggler-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .nav-item {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 4%;
+  }
+
+  .my-info {
+    flex-direction: column;
+    height: 85vh;
+    padding: 1rem;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .my-role {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .my-role,
+  .about-me {
+    width: 100%;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .about-me {
+    border: 5px outset #09090a;
+  }
+
+  h1 {
+    font-size: 7.5vw;
+    margin-bottom: 1rem;
+  }
+
+  .main-role,
+  .secondary-role {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .function-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-text {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .headerSub {
+    height: 60%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .aboutRow {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .devFunctionCol {
+    display: flex;
+  }
+
+  .devFunction {
+    font-size: 3.5rem;
+    margin: auto;
+  }
+
+  .aboutCol {
+    display: flex;
+    align-items: center;
+  }
+
+  .aboutText,
+  .textDescription {
+    font-size: 1rem;
+  }
+
+  .sectionMain {
+    padding: 4%;
+  }
+
+  .fixed-button {
+    bottom: 5px;
+    right: 5px;
+    padding: 8px 10px;
+    font-size: 0.5rem;
+  }
+}
+
+/* Media Queries para dispositivos muito pequenos */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  .my-functions span {
+    font-size: 1rem;
+  }
+  i {
+    font-size: 1rem;
+  }
+
+  .main-role,
+  .secondary-role {
+    font-size: 1.25rem;
+  }
+
+  .about-me h2 {
+    font-size: 1.25rem;
+  }
+
+  .about-text {
+    font-size: 1.25rem;
+  }
+}

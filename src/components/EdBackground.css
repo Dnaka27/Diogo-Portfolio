@@ -1,0 +1,248 @@
+#EB {
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.EBContent {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 2rem;
+  gap: 2rem;
+}
+
+.EBOptions,
+.EBCols {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.EBOptions h3 {
+  padding: 0.5rem;
+  font-size: 2rem;
+}
+
+.EBCertifies h3 {
+  border-bottom: 4px #00c3ff solid;
+}
+
+.EBAcademic h3 {
+  border-bottom: 4px #6200ff solid;
+}
+
+.EBCertifies h3:hover,
+.EBAcademic h3:hover,
+.EBColOff:hover {
+  cursor: pointer;
+}
+
+.EBCols {
+  margin: 0;
+}
+
+.EBActive {
+  animation: EBOptionActive 0.5s ease forwards;
+}
+
+.EBOff {
+  animation: EBOptionOff 0.5s ease forwards;
+}
+
+.EBOff h3:hover {
+  background-color: #273f80;
+}
+
+.EBColActive {
+  animation: EBColActive 0.5s ease forwards;
+}
+
+.EBColOff {
+  animation: EBColOff 0.5s ease forwards;
+}
+
+.EBCertifiesList {
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  text-align: center;
+  padding: 1%;
+}
+
+.EBCertifiesList li {
+  padding: 1%;
+  cursor: pointer;
+}
+
+.EBCertifiesList li:hover {
+  border-radius: 0.5rem;
+  background-color: #4c3a7c;
+}
+
+.EBAcademicCol p {
+  text-align: justify;
+  padding: 1%;
+}
+
+@keyframes EBOptionActive {
+  from {
+    opacity: 0.5;
+    flex: 30;
+    font-size: 2rem;
+  }
+
+  to {
+    opacity: 1;
+    flex: 60;
+    font-size: 2.5rem;
+  }
+}
+
+@keyframes EBOptionOff {
+  from {
+    opacity: 1;
+    flex: 60;
+    font-size: 1.5rem;
+  }
+
+  to {
+    opacity: 0.5;
+    flex: 30;
+    font-size: 0.5rem;
+  }
+}
+
+@keyframes EBColActive {
+  from {
+    opacity: 0.5;
+    flex: 30;
+    font-size: 1rem;
+  }
+
+  to {
+    opacity: 1;
+    flex: 60;
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes EBColOff {
+  from {
+    opacity: 1;
+    flex: 60;
+    font-size: 1.5rem;
+  }
+
+  to {
+    opacity: 0.5;
+    flex: 30;
+    font-size: 1rem;
+  }
+}
+
+/* Media query para telas menores (ex: tablets e smartphones) */
+@media (max-width: 768px) {
+  .EBContent {
+    height: auto;
+    /* Ajusta a altura automaticamente */
+    padding: 0.375rem;
+    /* Reduz o padding */
+    gap: 3rem;
+    /* Reduz o gap */
+  }
+
+  .EBOptions {
+    padding: 0 1%;
+  }
+
+  .EBOptions h3 {
+    padding: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .EBCertifiesList {
+    padding: 0;
+    /* Remove o padding */
+  }
+
+  .EBCertifiesList li {
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .EBAcademicCol p {
+    padding: 0.25rem;
+    font-size: 0.8rem;
+  }
+
+  .EBCertifiesList {
+    padding: 0;
+  }
+
+  .EBCols {
+    height: 40vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+  }
+
+  .EBColActive {
+    max-height: 100%;
+    animation: showActive 0.9s forwards;
+  }
+
+  .EBColOff {
+    animation: showOff 0.4s forwards;
+  }
+
+  @keyframes EBOptionActive {
+    from {
+      opacity: 0.5;
+      flex: 30;
+      font-size: 1rem;
+    }
+
+    to {
+      opacity: 1;
+      flex: 60;
+      font-size: 1.5rem;
+    }
+  }
+
+  @keyframes EBOptionOff {
+    from {
+      opacity: 1;
+      flex: 60;
+      font-size: 2rem;
+    }
+
+    to {
+      opacity: 0.5;
+      flex: 30;
+      font-size: 1.5rem;
+    }
+  }
+
+  @keyframes EBColActive {
+    from {
+      font-size: 0.5rem;
+    }
+
+    to {
+      font-size: 1rem;
+    }
+  }
+
+  @keyframes EBColOff {
+    from {
+      font-size: 1rem;
+    }
+
+    to {
+      font-size: 0.8rem;
+    }
+  }
+}
