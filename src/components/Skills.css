@@ -43,3 +43,17 @@
   padding-left: 25%;
   font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .skillTitle {
+    font-size: 1.25rem 
+  }
+  .skillBlock h4{
+    font-size: 0.875rem;
+    margin-bottom: 3%;
+  }
+
+  .skillLine span{
+    font-size: 0.875rem
+  }
+}

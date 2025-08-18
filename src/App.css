@@ -66,6 +66,10 @@ ol {
   padding: 4% 5%;
 }
 
+/* Common utils */
+
+
+
 /* Responsivity */
 
 @media (max-width: 769px) {
@@ -75,13 +79,7 @@ ol {
 
   .titleSection {
     display: flex;
-    font-size: 1.25rem;
-  }
-
-  .textDescription {
-    text-align: justify;
-    margin: 1% 0;
-    padding: 2%;
+    font-size: 1.375rem;
   }
 
   #skills .row {
@@ -92,10 +90,6 @@ ol {
   .softSkills,
   .hardSkills {
     margin: 4% 0;
-  }
-
-  .skillBlock h4 {
-    margin-bottom: 5%;
   }
 
   .sectionFooter {
@@ -175,31 +169,6 @@ ol {
     font-size: 1.75rem;
   }
 
-  .carousel {
-    border-radius: 0.5rem;
-    margin-top: 5%;
-    padding: 2% 0;
-  }
-
-  .carouselProjects {
-    height: 70vh;
-    margin: 0;
-    flex-direction: column;
-    padding: 2% 7.5%;
-  }
-
-  .carouselImageCol,
-  .carouselDescriptionCol {
-    margin: 2% 0;
-  }
-
-  .titleProjectDescription,
-  .textDescription {
-    text-align: justify;
-    margin: 1% 0;
-    padding: 2%;
-  }
-
   #skills .row {
     display: flex;
     flex-direction: column;
@@ -232,7 +201,7 @@ ol {
 
   .EBColActive {
     max-height: 100%;
-    animation: showActive 0.9s forwards;
+    animation: showActive 1s forwards;
   }
 
   .EBColOff {

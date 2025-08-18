@@ -64,7 +64,7 @@ const Skills = () => {
             <p className='textDescription'>
               Information Technology Management (GTI) student at IFSC in
               Florianópolis. In the programming part, I carried out programming
-              logic using <span className='styleTech styleCPP'>C++</span> and object orientation using <span className='styleTech styleJV'>Java</span>. Furthermore, I learned about network and management basics in disciplines such as: Network infrastructure, systems development processes, people management, and economic and financial management.
+              logic using <span className='eb-styleTech styleCPP'>C++</span> and object orientation using <span className='eb-styleTech styleJV'>Java</span>. Furthermore, I learned about network and management basics in disciplines such as: Network infrastructure, systems development processes, people management, and economic and financial management.
             </p>
           </div>
         </div>

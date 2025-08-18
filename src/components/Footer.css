@@ -46,3 +46,9 @@
 .arrow-up i:hover {
   color: #7125ff;
 }
+
+@media (max-width: 480px) {
+  .contactIcons {
+    margin-right: 2rem;
+  }
+}
