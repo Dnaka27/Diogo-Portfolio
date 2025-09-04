@@ -88,7 +88,7 @@ const Header = () => {
             <span className='header-styleTech header-stylePY'>Python</span>,{' '}
             <span className='header-styleTech header-styleJV'>Java</span>, and{' '}
             <span className='header-styleTech header-styleJS'>JavaScript</span>. Tech enthusiast, always{' '}
-            <span className='styleEnph'>learning</span> and evolving.
+            learning and <span className='styleEnph'>evolving</span>.
           </p>
         </div>
       </div>

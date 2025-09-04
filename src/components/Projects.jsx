@@ -24,6 +24,15 @@ const projectData = [
     githubRepository: "https://github.com/Dnaka27/ToDoList_basic/",
     techs: ["fa-brands fa-react", "fa-brands fa-square-js", "fa-brands fa-css"],
   },
+  {
+    name: "AI Agente RAG",
+    category: "Artificial Intelligence",
+    className: "data-science",
+    description:
+      "An AI agent that utilizes Langchain with Retrieval-Augmented Generation (RAG) techniques to enhance information retrieval and response generation. Model: Gemini / Interface: Streamlit.",
+    githubRepository: "https://github.com/Dnaka27/RAG-Gemini-embedding",
+    techs: ["fa-brands fa-python", "fa-solid fa-robot"],
+  },
 ];
 
 const ProjectContent = ({ project }) => (
@@ -62,7 +71,11 @@ const Projects = () => (
             >
               <div className="d-flex align-items-center w-100">
                 <span className="project-name">{project.name}</span>
-                <div className={`project-category project-${project.className}`}>{project.category}</div>
+                <div
+                  className={`project-category project-${project.className}`}
+                >
+                  {project.category}
+                </div>
                 <div className="tech-icons">
                   {project.techs.map((tech, techIndex) => (
                     <i key={techIndex} className={tech}></i>
