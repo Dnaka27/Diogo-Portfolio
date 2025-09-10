@@ -25,7 +25,7 @@ const projectData = [
     techs: ["fa-brands fa-react", "fa-brands fa-square-js", "fa-brands fa-css"],
   },
   {
-    name: "AI Agente RAG",
+    name: "AI Agent RAG",
     category: "Artificial Intelligence",
     className: "data-science",
     description:

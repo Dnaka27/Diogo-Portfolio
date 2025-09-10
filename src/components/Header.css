@@ -1,9 +1,47 @@
 header {
-  position: flex; /* Corrigido para 'flex' */
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
   text-align: center;
+  overflow: hidden;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-around;
+}
+
+.rotating-square {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25rem;
+  height: 25rem;
+  border: 6px solid #58366f6e;
+  background: transparent;
+
+  /* Centralizar no header */
+  transform: translate(-50%, -50%) rotate(0deg);
+  transform-origin: center center;
+
+  /* Animação */
+  animation: rotate-square 30s linear infinite;
+  z-index: 0;
+}
+
+@keyframes rotate-square {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 #nav-style {
@@ -59,6 +97,7 @@ header {
 h1 {
   text-align: center;
   font-size: 3.5rem;
+  text-shadow: 6px 6px 15px #27004e;
 }
 
 .my-functions {
@@ -93,6 +132,11 @@ h1 {
   border-left: 2px solid #9d00ff;
 }
 
+.main-role span,
+.secondary-role span {
+  text-shadow: 6px 6px 15px #27004e;
+}
+
 .about-me {
   display: flex;
   justify-content: center;
@@ -100,6 +144,10 @@ h1 {
   background-color: #1f1f1f;
   border: 8px outset #09090a;
   box-shadow: 6px 6px 15px #27004e;
+}
+
+.function-icons i {
+  text-shadow: 6px 6px 15px #27004e;
 }
 
 .about-text {
@@ -282,9 +330,11 @@ h1 {
   h1 {
     font-size: 1.75rem;
   }
+
   .my-functions span {
     font-size: 1rem;
   }
+
   i {
     font-size: 1rem;
   }
