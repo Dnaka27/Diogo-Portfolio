@@ -238,14 +238,14 @@ h1 {
 
   .my-info {
     flex-direction: column;
-    height: 85vh;
+    height: 80vh;
     padding: 1rem;
     gap: 1rem;
     margin: 0;
   }
 
   .my-role {
-    height: 70%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
