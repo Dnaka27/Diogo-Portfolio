@@ -118,6 +118,15 @@
   border-left: 3px solid #ff5100;
 }
 
+.project-ai {
+  padding: 0 1.5%;
+  border-left: 3px solid #9000ff;
+}
+
+.project-styleTech {
+  
+}
+
 .project-link {
   font-size: 2.5rem;
   width: 7%;
