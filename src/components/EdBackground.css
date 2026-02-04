@@ -157,6 +157,11 @@
 
 /* Media query para telas menores (ex: tablets e smartphones) */
 @media (max-width: 768px) {
+  #EB {
+    justify-content: space-between;
+    height: 60vh;
+  }
+
   .EBContent {
     height: auto;
     padding: 0.25rem;
