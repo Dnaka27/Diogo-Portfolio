@@ -87,13 +87,9 @@ const Header = () => {
           <div className="about-me">
             <p className="about-text">
               Developing smart solutions with{" "}
-              <span className="header-styleTech header-stylePY">Python</span>,{" "}
-              <span className="header-styleTech header-styleJV">Java</span>, and{" "}
-              <span className="header-styleTech header-styleJS">
-                JavaScript
-              </span>
-              . Tech enthusiast, always learning and{" "}
-              <span className="styleEnph">evolving</span>.
+              <span className="header-styleTech header-stylePY">Python</span> to solve practical problems. {" "}
+              <span className="styleEnph">Data driven</span> tech enthusiast, committed to continuous learning and technical growth. {" "}
+              <span className="styleStayHard">Stay hard!</span>
             </p>
           </div>
         </div>

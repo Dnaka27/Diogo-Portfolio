@@ -141,9 +141,9 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1f1f1f;
-  border: 8px outset #09090a;
-  box-shadow: 6px 6px 15px #27004e;
+  background-color: #1D1729;
+  border: 1px solid #6b6b7a;
+  box-shadow: 4px 4px 12px #000000;
 }
 
 .function-icons i {
@@ -151,7 +151,6 @@ h1 {
 }
 
 .about-text {
-  font-family: 'Playfair Display', serif;
   color: white;
   justify-content: center;
   padding: 1rem;
@@ -167,16 +166,22 @@ h1 {
   border-bottom: 2px solid #4800ff;
 }
 
+
+/* 
 .header-styleJV {
   border-bottom: 2px solid #ff0015;
 }
 
 .header-styleJS {
   border-bottom: 2px solid #ffc800;
-}
+} */
 
 .styleEnph {
   border-bottom: 2px solid white;
+}
+
+.styleStayHard {
+  border-bottom: 2px solid rgb(255, 0, 0);
 }
 
 /* Botão fixo */
