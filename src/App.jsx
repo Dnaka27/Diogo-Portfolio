@@ -14,7 +14,7 @@ const App = () => {
       <main>
         <Projects/>
         <EdBackground/>
-        <Skills/>
+        {/* <Skills/> */}
         <Footer/>
       </main>
     </div>
