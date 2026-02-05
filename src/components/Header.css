@@ -86,14 +86,6 @@ header {
   justify-content: space-around;
 }
 
-.about-me {
-  display: flex;
-  width: 45%;
-  justify-content: center;
-  align-items: center;
-  background-color: #2495ff;
-}
-
 h1 {
   text-align: center;
   font-size: 3.5rem;
@@ -138,10 +130,12 @@ h1 {
 }
 
 .about-me {
+  width: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1D1729;
+  background-color: #1e1433;
+  border-radius: 0.25rem;
   border: 1px solid #6b6b7a;
   box-shadow: 4px 4px 12px #000000;
 }
@@ -155,7 +149,7 @@ h1 {
   justify-content: center;
   padding: 1rem;
   margin-left: 1rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: left;
   margin: 0;
   font-weight: 100;
@@ -165,7 +159,6 @@ h1 {
 .header-stylePY {
   border-bottom: 2px solid #4800ff;
 }
-
 
 /* 
 .header-styleJV {
@@ -177,38 +170,36 @@ h1 {
 } */
 
 .styleEnph {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #9d00ff;
 }
 
 .styleStayHard {
-  border-bottom: 2px solid rgb(255, 0, 0);
+  border-bottom: 2px solid white;
 }
 
 /* Botão fixo */
 
 .fixed-button {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
-  padding: 8px 16px;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
   background-color: #143e99ff;
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-  /* Transição suave para a cor de fundo */
 }
 
 .fixed-button:hover {
   background-color: #4d43df;
   color: #fff;
-  /* Cor de fundo ao passar o mouse */
 }
 
-/* Media Queries para Mobile */
 @media (max-width: 768px) {
   header {
     max-height: 100vh;
   }
+
   .header-content {
     justify-content: flex-start;
   }
