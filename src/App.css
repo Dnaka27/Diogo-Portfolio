@@ -7,7 +7,7 @@
  */
 
 body {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: white;
 }
 
@@ -60,10 +60,6 @@ ol {
   margin: 0;
   padding: 1.5%;
   color: white;
-}
-
-#contact {
-  padding: 4% 5%;
 }
 
 /* Common utils */

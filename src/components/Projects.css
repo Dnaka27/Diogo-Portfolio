@@ -1,6 +1,6 @@
 #projects {
   height: 100vh;
-  max-height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   padding: 3%;
   overflow: hidden;
@@ -136,17 +136,18 @@
 @media (max-width: 768px) {
   #projects {
     height: auto;
-    min-height: 70vh;
+    min-height: 60vh;
     padding: 3%;
   }
 
   .accordion {
     width: 100%;
     margin: auto;
+    padding: 7% 0;
   }
 
   .accordion-item {
-    padding: 2%;
+    padding: 1.5%;
   }
 
   .project-header h3{

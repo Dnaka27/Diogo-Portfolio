@@ -158,14 +158,14 @@
 /* Media query para telas menores (ex: tablets e smartphones) */
 @media (max-width: 768px) {
   #EB {
-    justify-content: space-between;
     height: 60vh;
+    justify-content: flex-start;
   }
 
   .EBContent {
-    height: auto;
+    justify-content: space-evenly;
     padding: 0.25rem;
-    gap: 7.5rem;
+    gap: 0;
   }
 
   .EBOptions {
@@ -206,7 +206,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-basis: 100%;
+    flex-basis: 50%;
   }
 
   .EBColActive {

@@ -7,7 +7,7 @@ const Footer = () => {
     emailFormat.value = email
     document.body.appendChild(emailFormat)
     emailFormat.select()
-    document.execCommand('copy')
+    navigator.clipboard.writeText(text);
     document.body.removeChild(emailFormat)
     alert('🟢 Email copied to clipboard: ' + email)
   }

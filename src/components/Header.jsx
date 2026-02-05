@@ -42,14 +42,14 @@ const Header = () => {
                 ACADEMIC
               </button>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <button
                 className="nav-link"
                 onClick={() => scrollToSection("skills")}
               >
                 SKILLS
               </button>
-            </li>
+            </li> */}
             <li className="nav-item">
               <button
                 className="nav-link"

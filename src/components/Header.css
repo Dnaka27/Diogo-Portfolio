@@ -45,7 +45,7 @@ header {
 }
 
 #nav-style {
-  padding: 2% 3%;
+  padding: 2% 4%;
 }
 
 .navbar-nav {
@@ -204,6 +204,9 @@ h1 {
   header {
     max-height: 100vh;
   }
+  .header-content {
+    justify-content: flex-start;
+  }
 
   #nav-style {
     padding: 4%;
@@ -238,7 +241,8 @@ h1 {
 
   .my-info {
     flex-direction: column;
-    height: 80vh;
+    justify-content: space-evenly;
+    height: 85vh;
     padding: 5%;
     gap: 1rem;
     margin: 0;

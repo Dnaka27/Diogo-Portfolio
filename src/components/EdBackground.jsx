@@ -62,9 +62,8 @@ const Skills = () => {
             onMouseEnter={() => handleMouseEnter('EBAcademic')}
           >
             <p className='textDescription'>
-              Information Technology Management (GTI) student at IFSC in
-              Florianópolis. In the programming part, I carried out programming
-              logic using <span className='eb-styleTech styleCPP'>C++</span> and object orientation using <span className='eb-styleTech styleJV'>Java</span>. Furthermore, I learned about network and management basics in disciplines such as: Network infrastructure, systems development processes, people management, and economic and financial management.
+              Graduated in Information Technology Management (GTI - 2025). In the programming part, I carried out programming
+              logic using <span className='eb-styleTech styleCPP'>C++</span> and object orientation using <span className='eb-styleTech styleJV'>Java</span>. Furthermore, learned about network and management basics in disciplines such as: Network infrastructure, systems development processes, people management, and economic and financial management.
             </p>
           </div>
         </div>
