@@ -6,8 +6,12 @@ const projectData = [
     name: 'Coin Viewer',
     category: 'Data Science',
     className: 'data-science',
-    description:
-      'A currency quotation application built with Python and Streamlit.',
+    description: [
+      { text: `A currency quotation application built with ` },
+      { text: `Python`, highlight: true },
+      { text: ` and ` },
+      { text: `Streamlit`, highlight: true },
+    ],
     githubRepository: 'https://github.com/Dnaka27/Coin_Viewer',
     techs: [
       'fa-brands fa-python',
@@ -19,8 +23,12 @@ const projectData = [
     name: 'To Do List',
     category: 'Web Development',
     className: 'web-development',
-    description:
-      'An organizational to-do list application using React and JavaScript.',
+    description: [
+      { text: `A currency quotation application built with` },
+      { text: `Python`, highlight: true },
+      { text: ` and ` },
+      { text: `Streamlit`, highlight: true },
+    ],
     githubRepository: 'https://github.com/Dnaka27/ToDoList_basic/',
     techs: ['fa-brands fa-react', 'fa-brands fa-square-js', 'fa-brands fa-css'],
   },
@@ -28,8 +36,12 @@ const projectData = [
     name: 'RAG Gemini',
     category: 'Artificial Intelligence',
     className: 'ai',
-    description:
-      'An AI agent that utilizes Langchain with Retrieval-Augmented Generation (RAG) techniques to enhance information retrieval and response generation',
+    description: [
+      { text: `A currency quotation application built with` },
+      { text: `Python`, highlight: true },
+      { text: ` and ` },
+      { text: `Streamlit`, highlight: true },
+    ],
     githubRepository: 'https://github.com/Dnaka27/RAG-Gemini-embedding',
     techs: ['fa-brands fa-python', 'fa-brands fa-google'],
   },
@@ -37,19 +49,25 @@ const projectData = [
     name: 'CV Hand Controller',
     category: 'Data Science',
     className: 'data-science',
-    description:
-      'An application that uses computer vision to control the mouse pointer with hand movements and gestures',
-    githubRepository: 'https://github.com/Dnaka27/Computer_vision-Hand_control',
-    techs: [
-      'fa-brands fa-python', 'fa-solid fa-robot'
+    description: [
+      { text: `A currency quotation application built with` },
+      { text: `Python`, highlight: true },
+      { text: ` and ` },
+      { text: `Streamlit`, highlight: true },
     ],
+    githubRepository: 'https://github.com/Dnaka27/Computer_vision-Hand_control',
+    techs: ['fa-brands fa-python', 'fa-solid fa-robot'],
   },
   {
     name: 'AI Web Searcher',
     category: 'Artificial Intelligence',
     className: 'ai',
-    description:
-      'Gemini Instance that utilizes Googe Search Tool to search the web and answer questions based on the results',
+    description: [
+      { text: `A currency quotation application built with ` },
+      { text: `Python`, highlight: true },
+      { text: ` and ` },
+      { text: `Streamlit`, highlight: true },
+    ],
     githubRepository: 'https://github.com/Dnaka27/AI-WebSearch',
     techs: ['fa-brands fa-python', 'fa-brands fa-google'],
   },
@@ -59,6 +77,19 @@ const ProjectContent = ({ project }) => (
   <div className='project-content'>
     <div className='project-header'>
       <h3>{project.name}</h3>
+      <p className='project-description'>
+        {project.description.map((part, index) =>
+          part.highlight ? (
+            <span key={index} className='project-style-tech'>
+              {part.text}
+            </span>
+          ) : (
+            part.text
+          )
+        )}
+      </p>
+    </div>
+    <div className='project-media'>
       <a
         href={project.githubRepository}
         target='_blank'
@@ -69,8 +100,6 @@ const ProjectContent = ({ project }) => (
         <i className='fa-brands fa-square-github'></i>
       </a>
     </div>
-    <div className='project-techs'><span className='style'>Imagem</span></div>
-    <p className='project-description'>{project.description}</p>
   </div>
 )
 
