@@ -9,14 +9,16 @@
 }
 
 .project-content {
+  display: flex;
+  justify-content: space-between;
   color: #fff;
 }
 
 .project-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+  align-items: left;
 }
 
 .project-description {
@@ -123,8 +125,8 @@
   border-left: 3px solid #9000ff;
 }
 
-.project-styleTech {
-  
+.project-style-tech {
+  background-color: gray;
 }
 
 .project-link {
