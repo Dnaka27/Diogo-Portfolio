@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './EdBackground.css';
 
+// TODO Backgroung geometric animation
+
 const Skills = () => {
   const [activeSection, setActiveSection] = useState('EBCertifies');
 
