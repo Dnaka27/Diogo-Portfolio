@@ -3,16 +3,16 @@ import React from 'react'
 
 const projectData = [
   {
-    name: 'Coin Viewer',
+    name: 'Cyber Attacks',
     category: 'Data Science',
     className: 'data-science',
     description: [
-      { text: `A currency quotation application built with ` },
+      { text: `A cyber attacks analysis application. Data pulled from kaggle dataset built with ` },
       { text: `Python`, highlight: true },
       { text: ` and ` },
       { text: `Streamlit`, highlight: true },
     ],
-    githubRepository: 'https://github.com/Dnaka27/Coin_Viewer',
+    githubRepository: 'https://github.com/Dnaka27/cyber-attacks-dashboard',
     techs: [
       'fa-brands fa-python',
       'fa-solid fa-database',
