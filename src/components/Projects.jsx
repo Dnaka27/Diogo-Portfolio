@@ -83,6 +83,8 @@ const projectData = [
   },
 ]
 
+// TODO Backgroung geometric animation
+
 const ProjectContent = ({ project }) => (
   <div className='project-content'>
     <div className='project-header'>
@@ -93,9 +95,7 @@ const ProjectContent = ({ project }) => (
             <span key={index} className='project-style-tech'>
               {part.text}
             </span>
-          ) : (
-            part.text
-          )
+          ) : (part.text)
         )}
       </p>
     </div>
@@ -118,7 +118,7 @@ const Projects = () => (
     <h2 className='titleSection'>PROJECTS</h2>
     <div className='accordion' id='projectAccordion'>
       {projectData.map((project, index) => (
-        <div className='accordion-item' key={index}>
+        <div className='accordion-item' key={project.name}>
           <h2 className='accordion-header' id={`heading${index}`}>
             <button
               className={`accordion-button ${index !== 0 ? 'collapsed' : ''}`}
@@ -145,9 +145,8 @@ const Projects = () => (
           </h2>
           <div
             id={`collapse${index}`}
-            className={`accordion-collapse collapse ${
-              index === 0 ? 'show' : ''
-            }`}
+            className={`accordion-collapse collapse ${index === 0 ? 'show' : ''
+              }`}
             aria-labelledby={`heading${index}`}
             data-bs-parent='#projectAccordion'
           >
