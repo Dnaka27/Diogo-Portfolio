@@ -1,24 +1,23 @@
-// src/App.js
-import React from 'react';
-import Header from './components/Header';
-import Projects from './components/Projects';
-import EdBackground from './components/EdBackground';
-import Skills from './components/Skills';
-import Footer from './components/Footer';
-import './App.css';
+import './App.css'
+import { portfolioProjects, profile, skillGroups, socialLinks } from './data/portfolioData'
+import Navbar from './components/Navbar'
+import HeroSection from './components/HeroSection'
+import ProjectsGrid from './components/ProjectsGrid'
+import SkillsSection from './components/SkillsSection'
+import ContactSection from './components/ContactSection'
 
 const App = () => {
   return (
-    <div class='scope'>
-      <Header/>
+    <div className='app-shell'>
+      <Navbar />
       <main>
-        <Projects/>
-        <EdBackground/>
-        {/* <Skills/> */}
-        <Footer/>
+        <HeroSection profile={profile} />
+        <ProjectsGrid projects={portfolioProjects} />
+        <SkillsSection skillGroups={skillGroups} />
+        <ContactSection profile={profile} socialLinks={socialLinks} />
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
