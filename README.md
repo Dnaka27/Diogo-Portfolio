@@ -2,7 +2,7 @@
 
 Welcome to my portfolio! Here, you'll find a detailed overview of my skills and professional journey. This space has been carefully crafted to showcase what I know and what I can offer to the world of technology. Feel free to explore and learn more about my work.
 
-👉 **[Visit My Portfolio](https://portfolio-v5-gamma.vercel.app/)**
+👉 **[Visit My Portfolio](https://diogo-portfolio-sync.vercel.app/)**
 
 ---
 
