@@ -1,8 +1,45 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme: light dark;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: #1f2428;
+  background-color: #ece8e1;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --color-text: #1f2428;
+  --color-muted: #5d646b;
+  --color-accent: #3b434a;
+  --color-border: rgba(63, 70, 76, 0.18);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--color-text);
+  background: #ece8e1;
+}
+
+a,
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  border: 0;
+}
+
+#root {
+  min-height: 100vh;
 }
