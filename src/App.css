@@ -1,50 +1,7 @@
 .app-shell {
-  position: relative;
   min-height: 100vh;
   padding: 0 0 4rem;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.06), transparent 18%),
-    radial-gradient(circle at 78% 16%, rgba(255, 255, 255, 0.04), transparent 16%),
-    linear-gradient(180deg, #020202 0%, #060606 42%, #020202 100%);
-}
-
-.app-shell::before,
-.app-shell::after {
-  content: '';
-  position: fixed;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.app-shell::before {
-  top: -10rem;
-  right: -7rem;
-  width: 36rem;
-  height: 36rem;
-  border-radius: 46% 54% 61% 39% / 42% 42% 58% 58%;
-  background:
-    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.12), transparent 34%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
-  transform: perspective(900px) rotateX(64deg) rotateY(-18deg) rotateZ(12deg);
-}
-
-.app-shell::after {
-  left: -10rem;
-  bottom: -14rem;
-  width: 42rem;
-  height: 42rem;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.06), transparent 45%),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.025), transparent 65%);
-  transform: perspective(1200px) rotateX(77deg) rotateY(8deg);
-}
-
-.site-header,
-main {
-  position: relative;
-  z-index: 1;
+  background: radial-gradient(circle, rgb(37, 34, 30), rgb(0, 0, 0));
 }
 
 .site-header {
@@ -196,6 +153,11 @@ main {
   line-height: 1.85;
 }
 
+.hero-stage-card p,
+.contact-copy p {
+  text-align: justify;
+}
+
 .hero-actions,
 .hero-metrics,
 .tag-list,
@@ -268,6 +230,11 @@ main {
   display: grid;
   gap: 1.25rem;
   padding-top: 0.5rem;
+}
+
+.hero-stage .hero-metrics {
+  padding-top: 0;
+  padding-bottom: 0.25rem;
 }
 
 .hero-stage-card {

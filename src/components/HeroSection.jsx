@@ -14,15 +14,6 @@ const HeroSection = ({ profile, socialLinks }) => {
             {profile.ctaSecondary}
           </a>
         </div>
-
-        <div className='hero-metrics' aria-label='Profile highlights'>
-          {profile.metrics.map((metric) => (
-            <article key={metric.label} className='metric-pill'>
-              <strong>{metric.value}</strong>
-              <span>{metric.label}</span>
-            </article>
-          ))}
-        </div>
       </div>
 
       <aside className='hero-stage' aria-label='Profile snapshot'>
@@ -53,7 +44,7 @@ const HeroSection = ({ profile, socialLinks }) => {
             </li>
             <li>
               <strong>Links</strong>
-              <a href=""></a>
+              <span>{socialLinks.map((link) => link.label).join(' / ')}</span>
             </li>
           </ul>
         </div>

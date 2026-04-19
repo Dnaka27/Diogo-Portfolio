@@ -1,17 +1,13 @@
 export const profile = {
   eyebrow: 'Data Engineer • Backend Developer',
   name: 'Diogo Oike',
-  headline: 'Building textured digital products with data and applied AI.',
+  headline: 'Building solutions and digital products with data and applied AI.',
   summary:
     'Turning raw data, APIs and automation into workflows that feel sharper and easier to use.',
   ctaPrimary: 'Browse projects',
   ctaSecondary: 'Get in touch',
   location: 'Brazil',
   availability: 'Freelance work, opportunities and technical collaborations',
-  metrics: [
-    { value: '05', label: 'Projects highlighted' },,
-    { value: '2025', label: 'Bachelors graduation' },
-  ],
   focusAreas: ['Python', 'Data Engineering', 'Backend Development'],
   spotlightTitle: 'From data pipelines to useful interfaces',
   spotlightBody:
