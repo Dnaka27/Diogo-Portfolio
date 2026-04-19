@@ -9,11 +9,11 @@ import ContactSection from './components/ContactSection'
 const App = () => {
   return (
     <div className='app-shell'>
-      <Navbar />
+      <Navbar profile={profile} />
       <main>
-        <HeroSection profile={profile} />
+        <HeroSection profile={profile} socialLinks={socialLinks} />
         <ProjectsGrid projects={portfolioProjects} />
-        <SkillsSection skillGroups={skillGroups} />
+        <SkillsSection profile={profile} skillGroups={skillGroups} />
         <ContactSection profile={profile} socialLinks={socialLinks} />
       </main>
     </div>
