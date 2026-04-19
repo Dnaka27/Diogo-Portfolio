@@ -1,20 +1,44 @@
 export const profile = {
   eyebrow: 'Data Engineer • Backend Developer',
   name: 'Diogo Oike',
+  headline: 'Building textured digital products with data and applied AI.',
   summary:
-    'Developing smart solutions with Python to solve practical problems. Data driven tech enthusiast, committed to continuous learning and technical growth.',
+    'Turning raw data, APIs and automation into workflows that feel sharper and easier to use.',
   ctaPrimary: 'Browse projects',
   ctaSecondary: 'Get in touch',
+  location: 'Brazil',
+  availability: 'Freelance work, opportunities and technical collaborations',
   metrics: [
-    { value: '05', label: 'Projects highlighted' }
+    { value: '05', label: 'Projects highlighted' },,
+    { value: '2025', label: 'Bachelors graduation' },
   ],
   focusAreas: ['Python', 'Data Engineering', 'Backend Development'],
+  spotlightTitle: 'From data pipelines to useful interfaces',
+  spotlightBody:
+    'My work sits between engineering and clarity: collect information, structure it well, expose it with the right logic, and turn that into something a person can actually use.',
   noteTitle: 'Academic background',
   noteBody:
-    'Graduated in Information Technology Management (GTI - 2025), with studies in C++, Java, network infrastructure, systems development processes, people management, and economic and financial management.',
+    'Graduated in Information Technology Management, with studies across software development, network infrastructure, systems processes, people management and business fundamentals.',
+  principles: [
+    {
+      title: 'Useful over ornamental',
+      body: 'I prefer interfaces and automations that solve a real operational need, not just demo polish.',
+    },
+    {
+      title: 'Structured thinking',
+      body: 'Projects usually start with data modeling, process mapping and what needs to scale cleanly.',
+    },
+    {
+      title: 'Fast iteration',
+      body: 'I like shipping compact technical experiments, validating them quickly and improving from there.',
+    },
+  ],
+  stackTitle: 'A profile shaped by backend, data and implementation fundamentals.',
+  stackBody:
+    'The strongest axis is Python and data-oriented problem solving, supported by web fundamentals, SQL.',
   contactTitle: 'Contact',
   contactBody:
-    'This portfolio now uses the original local content again while keeping the newer layout. Reach out by email or connect through GitHub and LinkedIn.',
+    'If you are building a dashboard, automation, backend service or data product, I am interested in collaborations where clean logic and practical delivery matter.',
 }
 
 export const portfolioProjects = [
@@ -34,7 +58,7 @@ export const portfolioProjects = [
     id: 'to-do-list',
     title: 'To Do List',
     summary:
-      'A basic To Do List application built with React, JavaScript, and CSS to manage tasks efficiently.',
+      'A basic To Do List application built with React, JavaScript and CSS to manage tasks efficiently.',
     category: 'Web Development',
     year: '2026',
     stack: ['React', 'JavaScript', 'CSS'],
@@ -46,7 +70,7 @@ export const portfolioProjects = [
     id: 'rag-gemini',
     title: 'RAG Gemini',
     summary:
-      'A Retrieval-Augmented Generation system built with Python and Google Gemini using embeddings to enhance contextual question answering.',
+      'A retrieval-augmented generation system built with Python and Google Gemini using embeddings to improve contextual question answering.',
     category: 'Artificial Intelligence',
     year: '2025',
     stack: ['Python', 'Google Gemini', 'Embeddings'],
@@ -58,8 +82,8 @@ export const portfolioProjects = [
     id: 'cv-hand-controller',
     title: 'CV Hand Controller',
     summary:
-      'A computer vision based hand gesture control system built with Python, using real-time hand tracking to control interactions and inputs.',
-    category: 'Data Science',
+      'A computer-vision hand gesture controller using real-time tracking to drive interactions and system inputs.',
+    category: 'Computer Vision',
     year: '2025',
     stack: ['Python', 'Computer Vision', 'Automation'],
     demoUrl: null,
@@ -70,8 +94,8 @@ export const portfolioProjects = [
     id: 'ai-web-searcher',
     title: 'AI Web Searcher',
     summary:
-      'An AI-powered web search application built with Python and Google APIs to retrieve, process, and summarize information from the web.',
-    category: 'Artificial Intelligence',
+      'An AI-powered search application built with Python and Google APIs to retrieve, process and summarize web information.',
+    category: 'AI Tooling',
     year: '2026',
     stack: ['Python', 'Google APIs', 'Information Retrieval'],
     demoUrl: null,
@@ -125,7 +149,7 @@ export const socialLinks = [
   },
   {
     label: 'LinkedIn',
-    value: 'linkedin.com/in/diogo-oike-kanefuku-23639b223',
-    href: 'https://www.linkedin.com/in/diogo-oike-kanefuku-23639b223/',
+    value: 'linkedin.com/in/diogo-oike-kanefuku',
+    href: 'https://www.linkedin.com/in/diogo-oike-kanefuku/',
   },
 ]

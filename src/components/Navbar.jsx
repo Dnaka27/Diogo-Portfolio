@@ -1,17 +1,21 @@
 const navItems = [
   { label: 'Projects', target: 'projects' },
-  { label: 'Skills', target: 'skills' },
+  { label: 'Stack', target: 'skills' },
   { label: 'Contact', target: 'contact' },
 ]
 
-const Navbar = () => {
+const Navbar = ({ profile }) => {
   return (
     <header className='site-header'>
-      <nav className='site-nav section' aria-label='Primary navigation'>
+      <nav className='site-nav section-shell' aria-label='Primary navigation'>
         <a className='site-brand' href='#hero'>
-          Template
-          <span>Portfolio</span>
+          <span className='site-brand-mark'>DO</span>
+          <div>
+            <strong>{profile.name}</strong>
+            <small>{profile.eyebrow}</small>
+          </div>
         </a>
+
         <div className='site-nav-links'>
           {navItems.map((item) => (
             <a key={item.target} href={`#${item.target}`}>

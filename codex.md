@@ -5,7 +5,7 @@ Create a reusable portfolio template. Content will be added later.
 
 ## Stack
 - React + Vite
-- Tailwind CSS
+- CSS
 
 ## Sections
 - Hero

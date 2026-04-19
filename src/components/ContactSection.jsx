@@ -1,17 +1,14 @@
 const ContactSection = ({ profile, socialLinks }) => {
   return (
-    <section id='contact' className='section'>
-      <div className='section-heading'>
-        <p className='eyebrow'>Contact</p>
-        <h2 className='section-title'>Direct contact and profile links.</h2>
-        <p>Use the links below to reach out or review the public profile pages.</p>
-      </div>
-
-      <div className='contact-layout'>
-        <article className='contact-card'>
-          <h3>{profile.contactTitle}</h3>
+    <section id='contact' className='section-shell content-section'>
+      <div className='contact-shell'>
+        <div className='contact-copy'>
+          <h2 className='section-title'>{profile.contactTitle}</h2>
           <p>{profile.contactBody}</p>
-        </article>
+          <a className='button button-primary' href={socialLinks[0]?.href}>
+            Start a conversation
+          </a>
+        </div>
 
         <div className='contact-list'>
           {socialLinks.map((link) => (
