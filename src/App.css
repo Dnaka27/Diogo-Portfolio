@@ -273,6 +273,10 @@ main {
   color: rgba(255, 255, 255, 0.28);
 }
 
+.skill-grid li::before {
+  content: '- ';
+}
+
 .stage-list {
   display: grid;
   gap: 0.9rem;
@@ -417,7 +421,7 @@ main {
 .skills-layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.75rem 2rem;
+  gap: 1.5rem 1.25rem;
 }
 
 .skill-group {
@@ -433,9 +437,13 @@ main {
 }
 
 .skill-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.15rem 0.8rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.skill-grid li {
+  display: block;
+  width: 100%;
 }
 
 .contact-shell {

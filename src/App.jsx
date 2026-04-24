@@ -11,7 +11,7 @@ const App = () => {
     <div className='app-shell'>
       <Navbar profile={profile} />
       <main>
-        <HeroSection profile={profile} socialLinks={socialLinks} />
+        <HeroSection profile={profile} />
         <ProjectsGrid projects={portfolioProjects} />
         <SkillsSection profile={profile} skillGroups={skillGroups} />
         <ContactSection profile={profile} socialLinks={socialLinks} />

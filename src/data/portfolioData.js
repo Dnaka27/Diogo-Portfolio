@@ -107,7 +107,7 @@ export const skillGroups = [
   },
   {
     title: 'Hard Skills',
-    skills: ['HTML', 'CSS', 'JavaScript', 'Python', 'Java', 'C/C++', 'SQL'],
+    skills: ['Web Development - (Html, Css, React, Node.js)', 'Data Engineering - (Python, Pandas, Spark, SQL, Airflow)'],
   },
   {
     title: 'Courses & Certificates',
