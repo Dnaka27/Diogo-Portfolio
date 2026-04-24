@@ -1,4 +1,4 @@
-const HeroSection = ({ profile, socialLinks }) => {
+const HeroSection = ({ profile }) => {
   return (
     <section id='hero' className='hero section-shell'>
       <div className='hero-copy'>
@@ -41,10 +41,6 @@ const HeroSection = ({ profile, socialLinks }) => {
             <li>
               <strong>Open to</strong>
               <span>{profile.availability}</span>
-            </li>
-            <li>
-              <strong>Links</strong>
-              <span>{socialLinks.map((link) => link.label).join(' / ')}</span>
             </li>
           </ul>
         </div>
