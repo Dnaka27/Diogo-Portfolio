@@ -257,24 +257,22 @@ main {
 
 .tag-list li,
 .project-stack li,
-.skills-priority span,
-.skill-grid li {
-  padding: 0.2rem 0;
-  color: var(--color-muted);
+.skills-priority span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text);
   font-weight: 400;
 }
 
 .tag-list li::before,
 .project-stack li::before,
-.skills-priority span::before,
-.skill-grid li::before {
-  content: '/';
-  margin-right: 0.45rem;
-  color: rgba(255, 255, 255, 0.28);
-}
-
-.skill-grid li::before {
-  content: '- ';
+.skills-priority span::before {
+  content: none;
 }
 
 .stage-list {
@@ -302,7 +300,7 @@ main {
 
 .hero-rail-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
@@ -437,13 +435,46 @@ main {
 }
 
 .skill-grid {
-  display: grid;
-  gap: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  height: 50%;
 }
 
 .skill-grid li {
   display: block;
   width: 100%;
+  padding: 0.2rem 0;
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.skill-grid li::before {
+  content: '- ';
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.skill-item-with-children strong {
+  display: inline;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.skill-sublist {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0.35rem 0 0;
+  padding-left: 1.1rem;
+  list-style: none;
+}
+
+.skill-sublist li {
+  padding: 0;
+}
+
+.skill-sublist li::before {
+  content: '- ';
+  color: rgba(255, 255, 255, 0.28);
 }
 
 .contact-shell {

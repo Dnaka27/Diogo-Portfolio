@@ -24,9 +24,22 @@ const SkillsSection = ({ profile, skillGroups }) => {
             <article key={group.title} className='skill-group'>
               <h3>{group.title}</h3>
               <ul className='skill-grid'>
-                {group.skills.map((skill) => (
-                  <li key={skill}>{skill}</li>
-                ))}
+                {group.skills.map((skill) => {
+                  if (typeof skill === 'string') {
+                    return <li key={skill}>{skill}</li>
+                  }
+
+                  return (
+                    <li key={skill.label} className='skill-item-with-children'>
+                      <strong>{skill.label}</strong>
+                      <ul className='skill-sublist'>
+                        {skill.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  )
+                })}
               </ul>
             </article>
           ))}

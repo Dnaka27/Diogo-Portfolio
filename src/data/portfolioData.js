@@ -1,5 +1,5 @@
 export const profile = {
-  eyebrow: 'Data Engineer • Backend Developer',
+  eyebrow: 'Data Engineer • Software Developer',
   name: 'Diogo Oike',
   headline: 'Building solutions and digital products with data and applied AI.',
   summary:
@@ -8,7 +8,7 @@ export const profile = {
   ctaSecondary: 'Get in touch',
   location: 'Brazil',
   availability: 'Freelance work, opportunities and technical collaborations',
-  focusAreas: ['Python', 'Data Engineering', 'Backend Development'],
+  focusAreas: ['Python', 'Data Engineering', 'Software Development'],
   spotlightTitle: 'From data pipelines to useful interfaces',
   spotlightBody:
     'My work sits between engineering and clarity: collect information, structure it well, expose it with the right logic, and turn that into something a person can actually use.',
@@ -21,20 +21,17 @@ export const profile = {
       body: 'I prefer interfaces and automations that solve a real operational need, not just demo polish.',
     },
     {
-      title: 'Structured thinking',
-      body: 'Projects usually start with data modeling, process mapping and what needs to scale cleanly.',
-    },
-    {
-      title: 'Fast iteration',
-      body: 'I like shipping compact technical experiments, validating them quickly and improving from there.',
+      title: 'Data driven',
+      body: 'I rely on data, process signals and measurable outcomes to guide what gets built and what gets improved.',
     },
   ],
-  stackTitle: 'A profile shaped by backend, data and implementation fundamentals.',
+  stackTitle:
+    'A profile shaped by software, data and implementation fundamentals.',
   stackBody:
     'The strongest axis is Python and data-oriented problem solving, supported by web fundamentals, SQL.',
   contactTitle: 'Contact',
   contactBody:
-    'If you are building a dashboard, automation, backend service or data product, I am interested in collaborations where clean logic and practical delivery matter.',
+    'If you are building a dashboard, automation, software service or data product, I am interested in collaborations where clean logic and practical delivery matter.',
 }
 
 export const portfolioProjects = [
@@ -103,21 +100,32 @@ export const portfolioProjects = [
 export const skillGroups = [
   {
     title: 'Soft Skills',
-    skills: ['Teamwork', 'Emotional Intelligence', 'Creativity'],
+    skills: ['Teamwork', 'Emotional Intelligence', 'Communication', 'Adaptability'],
   },
   {
     title: 'Hard Skills',
-    skills: ['Web Development - (Html, Css, React, Node.js)', 'Data Engineering - (Python, Pandas, Spark, SQL, Airflow)'],
+    skills: [
+      {
+        label: 'Web Development',
+        items: ['HTML, CSS, JavaScript', 'React, Node.js'],
+      },
+      {
+        label: 'Data Engineering',
+        items: ['Python, SQL', 'Pandas, Spark', 'Airflow'],
+      },
+    ],
   },
   {
     title: 'Courses & Certificates',
     skills: [
-      'DIO: Amazon Web Services',
-      'DIO: Potencia Tech Data Science',
-      'Coursera: Google Data Analytics',
-      'Udemy: Python Bootcamp',
-      'Udemy: Fullstack Web Bootcamp',
-      'Cubos Academy: Data Analysis',
+      'Google AI Essentials',
+      'Databricks Fundamentals',
+      "Datacamp Azure Introduction",
+      'DIO Amazon Web Services',
+      'DIO Potencia Tech Data Science',
+      'Coursera Google Data Analytics',
+      'Udemy Python Bootcamp',
+      'Cubos Academy Data Analysis'
     ],
   },
   {
@@ -128,6 +136,7 @@ export const skillGroups = [
       'Systems Development Processes',
       'People Management',
       'Economic and Financial Management',
+      'Process Management'
     ],
   },
 ]
