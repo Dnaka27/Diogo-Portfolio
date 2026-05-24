@@ -110,8 +110,10 @@ main {
 }
 
 .hero-copy {
-  display: grid;
-  gap: 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .eyebrow,
