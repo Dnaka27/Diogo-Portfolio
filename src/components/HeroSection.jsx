@@ -2,10 +2,7 @@ const HeroSection = ({ profile }) => {
   return (
     <section id='hero' className='hero section-shell'>
       <div className='hero-copy'>
-        <p className='eyebrow'>{profile.eyebrow}</p>
         <h1 className='hero-title'>{profile.headline}</h1>
-        <p className='hero-description'>{profile.summary}</p>
-
         <div className='hero-actions'>
           <a className='button button-primary' href='#projects'>
             {profile.ctaPrimary}
