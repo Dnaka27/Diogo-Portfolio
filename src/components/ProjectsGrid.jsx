@@ -10,11 +10,11 @@ const ProjectsGrid = ({ projects }) => {
       </div>
 
       <div className='projects-showcase'>
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <ProjectCard
             key={project.id}
             {...project}
-            layout={index === 0 ? 'featured' : 'compact'}
+            layout='compact'
           />
         ))}
       </div>
