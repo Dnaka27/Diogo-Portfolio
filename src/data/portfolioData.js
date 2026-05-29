@@ -48,18 +48,6 @@ export const portfolioProjects = [
     featured: true,
   },
   {
-    id: 'to-do-list',
-    title: 'To Do List',
-    summary:
-      'A basic To Do List application built with React, JavaScript and CSS to manage tasks efficiently.',
-    category: 'Web Development',
-    year: '2026',
-    stack: ['React', 'JavaScript', 'CSS'],
-    demoUrl: null,
-    repoUrl: 'https://github.com/Dnaka27/ToDoList_basic/',
-    featured: false,
-  },
-  {
     id: 'rag-gemini',
     title: 'RAG Gemini',
     summary:
