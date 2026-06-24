@@ -1,40 +1,35 @@
-# My Personal Portfolio (in progress)
+# Diogo Portfolio
 
-Welcome to my portfolio! Here, you'll find a detailed overview of my skills and professional journey. This space has been carefully crafted to showcase what I know and what I can offer to the world of technology. Feel free to explore and learn more about my work.
+Personal portfolio website showcasing projects and skills in web development and data engineering.
 
-👉 **[Visit My Portfolio](https://diogo-portfolio-sync.vercel.app/)**
-
----
-
-## 🚀 Technologies Used
-
-Here are the main technologies and tools I used to develop this page:
-
-### 🛠️ **Languages and Libraries**
-- ![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-- ![CSS](https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css&logoColor=white)
-- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
-- ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-- ![Bootstrap](https://img.shields.io/badge/Bootstrap-5C2D91?style=for-the-badge&logo=bootstrap&logoColor=white)
-- ![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://diogo-portfolio-sync.vercel.app/)
 
 ---
 
-## 📝 About the Project
+## Technologies
 
-This portfolio was developed to showcase my experience and competencies in web development. Each section was designed to be intuitive, reflecting my work style and the knowledge I've gained throughout my career.
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5C2D91?style=for-the-badge&logo=bootstrap&logoColor=white)
+![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 
 ---
 
-## 📬 Contact
+## About
 
-If you'd like to discuss opportunities, collaborations, or just say "Hi," feel free to reach out:
+Portfolio built to present my experience in web development and data engineering. Each section is designed to reflect my work style and the knowledge accumulated throughout my career. Deployed on Vercel.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-78d?style=for-the-badge&logo=linkedin&logoColor=0A0AAF)](https://www.linkedin.com/in/diogo-oike-kanefuku/) 
+---
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE.txt) file for details.
+
+---
+
+## Contact
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-78d?style=for-the-badge&logo=linkedin&logoColor=0A0AAF)](https://www.linkedin.com/in/diogo-oike-kanefuku-23639b223/) 
 [![E-mail](https://img.shields.io/badge/-Email-e9a?style=for-the-badge&logo=gmail&logoColor=E94D5F)](mailto:diogooikejapan@gmail.com)
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
