@@ -17,8 +17,8 @@ export const profile = {
     'Graduated in Information Technology Management, with studies across software development, network infrastructure, systems processes, people management and business fundamentals.',
   principles: [
     {
-      title: 'Useful over ornamental',
-      body: 'I prefer interfaces and automations that solve a real operational need, not just demo polish.',
+      title: 'Automation first',
+      body: 'I like to solve problems and tasks by building interfaces and automations that solve a real operational need.',
     },
     {
       title: 'Data driven',
@@ -28,7 +28,7 @@ export const profile = {
   stackTitle:
     'A profile shaped by software, data and implementation fundamentals.',
   stackBody:
-    'The strongest axis is Python and data-oriented problem solving, supported by web fundamentals, SQL.',
+    'The strongest axis is Python and data-oriented problem solving, supported by web fundamentals and SQL.',
   contactTitle: 'Contact',
   contactBody:
     'If you are building a dashboard, automation, software service or data product, I am interested in collaborations where clean logic and practical delivery matter.',
