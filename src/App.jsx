@@ -9,6 +9,12 @@ import ContactSection from './components/ContactSection'
 const App = () => {
   return (
     <div className='app-shell'>
+      <div className='geometric-background' aria-hidden='true'>
+        <span className='geo-shape geo-shape-one' />
+        <span className='geo-shape geo-shape-two' />
+        <span className='geo-shape geo-shape-three' />
+        <span className='geo-shape geo-shape-four' />
+      </div>
       <Navbar profile={profile} />
       <main>
         <HeroSection profile={profile} />
