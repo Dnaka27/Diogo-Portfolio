@@ -1,58 +1,62 @@
 const HeroSection = ({ profile }) => {
+  const subline = profile.focusAreas.join(' · ')
+
   return (
-    <section id='hero' className='hero section-shell'>
-      <div className='hero-copy'>
-        <h1 className='hero-title'>{profile.headline}</h1>
-        <div className='hero-actions'>
-          <a className='button button-primary' href='#projects'>
-            {profile.ctaPrimary}
-          </a>
-          <a className='button button-secondary' href='#contact'>
-            {profile.ctaSecondary}
-          </a>
+    <section id='hero' className='hero-section container'>
+      <div className='hero-layout'>
+        <div className='hero-copy'>
+          <p className='sys-label'>[ Eng. de Dados ]</p>
+          <h1 className='hero-headline'>{profile.headline}</h1>
+          <p className='hero-sub'>// {subline}</p>
+          <div className='hero-ctas'>
+            <a className='cta-primary' href='#projects'>
+              {profile.ctaPrimary} →
+            </a>
+            <a className='cta-secondary' href='#contact'>
+              {profile.ctaSecondary}
+            </a>
+          </div>
         </div>
+
+        <aside className='status-panel' aria-label='Profile snapshot'>
+          <div className='status-panel-header'>
+            <span className='sys-label'>Profile Status</span>
+          </div>
+          <dl className='status-panel-rows'>
+            <div className='status-row'>
+              <dt>Name</dt>
+              <dd>{profile.name}</dd>
+            </div>
+            <div className='status-row'>
+              <dt>Location</dt>
+              <dd>{profile.location}</dd>
+            </div>
+            <div className='status-row'>
+              <dt>Status</dt>
+              <dd>
+                <span className='pulse-dot' aria-hidden='true' />
+                Open to Work
+              </dd>
+            </div>
+            <div className='status-row'>
+              <dt>Focus</dt>
+              <dd className='status-dd-stack'>
+                {profile.focusAreas.map((area) => (
+                  <span key={area}>{area}</span>
+                ))}
+              </dd>
+            </div>
+          </dl>
+        </aside>
       </div>
 
-      <aside className='hero-stage' aria-label='Profile snapshot'>
-        <div className='hero-stage-card'>
-          <strong>{profile.spotlightTitle}</strong>
-          <p>{profile.spotlightBody}</p>
-          <ul className='tag-list'>
-            {profile.focusAreas.map((area) => (
-              <li key={area}>{area}</li>
-            ))}
-          </ul>
-        </div>
-
-        <div className='hero-stage-card'>
-          <strong>{profile.noteTitle}</strong>
-          <p>{profile.noteBody}</p>
-        </div>
-
-        <div className='hero-stage-card'>
-          <ul className='stage-list'>
-            <li>
-              <strong>Based in</strong>
-              <span>{profile.location}</span>
-            </li>
-            <li>
-              <strong>Open to</strong>
-              <span>{profile.availability}</span>
-            </li>
-          </ul>
-        </div>
-      </aside>
-
-      <div className='hero-rail'>
-        <p className='eyebrow'>Approach</p>
-        <div className='hero-rail-grid'>
-          {profile.principles.map((principle) => (
-            <article key={principle.title} className='rail-card'>
-              <strong>{principle.title}</strong>
-              <p>{principle.body}</p>
-            </article>
-          ))}
-        </div>
+      <div className='hero-principles'>
+        {profile.principles.map((principle) => (
+          <article key={principle.title} className='principle-card'>
+            <strong>{principle.title}</strong>
+            <p>{principle.body}</p>
+          </article>
+        ))}
       </div>
     </section>
   )

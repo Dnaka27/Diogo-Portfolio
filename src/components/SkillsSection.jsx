@@ -1,48 +1,40 @@
-const SkillsSection = ({ profile, skillGroups }) => {
+const coreStack = [
+  'Python',
+  'SQL',
+  'Data Engineering',
+  'Machine Learning',
+  'Applied AI',
+]
+
+const SkillsSection = ({ skillGroups }) => {
+  const certs = skillGroups.find((g) => g.title === 'Courses & Certificates')?.skills ?? []
+
   return (
-    <section id='skills' className='section-shell content-section'>
-      <div className='section-heading section-heading-split'>
-        <div>
-          <h2 className='section-title'>Skills and foundations.</h2>
-        </div>
+    <section id='skills' className='stack-section container'>
+      <div className='section-header'>
+        <p className='sys-label'>[ Sistema ]</p>
+        <h2 className='section-title'>Stack</h2>
       </div>
 
-      <div className='skills-board'>
-        <article className='skills-intro'>
-          <h3>{profile.stackTitle}</h3>
-          <p>{profile.stackBody}</p>
-
-          <div className='skills-priority'>
-            {profile.focusAreas.map((area) => (
-              <span key={area}>{area}</span>
-            ))}
-          </div>
-        </article>
-
-        <div className='skills-layout'>
-          {skillGroups.map((group) => (
-            <article key={group.title} className='skill-group'>
-              <h3>{group.title}</h3>
-              <ul className='skill-grid'>
-                {group.skills.map((skill) => {
-                  if (typeof skill === 'string') {
-                    return <li key={skill}>{skill}</li>
-                  }
-
-                  return (
-                    <li key={skill.label} className='skill-item-with-children'>
-                      <strong>{skill.label}</strong>
-                      <ul className='skill-sublist'>
-                        {skill.items.map((item) => (
-                          <li key={item}>{item}</li>
-                        ))}
-                      </ul>
-                    </li>
-                  )
-                })}
-              </ul>
-            </article>
+      <div className='stack-layout'>
+        <div className='stack-core' aria-label='Core technologies'>
+          {coreStack.map((tech) => (
+            <div key={tech} className='stack-tech'>
+              {tech.toUpperCase()}
+            </div>
           ))}
+        </div>
+
+        <div className='stack-certs'>
+          <p className='sys-label'>[ Certificações ]</p>
+          <ul className='cert-list'>
+            {certs.map((cert) => (
+              <li key={cert} className='cert-item'>
+                <span className='cert-bullet' aria-hidden='true'>—</span>
+                {cert}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
