@@ -9,87 +9,6 @@
     var(--bg-page);
 }
 
-.app-shell::after {
-  content: "";
-  position: fixed;
-  inset: -18rem;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at 50% 12%, rgba(0, 0, 0, 0.82), transparent 62%);
-  opacity: 0.32;
-}
-
-.geometric-background {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.geo-shape {
-  position: absolute;
-  display: block;
-  width: 11rem;
-  aspect-ratio: 1;
-  opacity: 0.22;
-  will-change: transform;
-}
-
-.geo-shape::before,
-.geo-shape::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-}
-
-.geo-shape::before {
-  border: 1px solid rgba(var(--accent-rgb), 0.18);
-  background:
-    linear-gradient(135deg, rgba(40, 40, 40, 0.25), rgba(10, 10, 10, 0.1)),
-    rgba(10, 10, 10, 0.12);
-}
-
-.geo-shape::after {
-  inset: 18%;
-  border: 1px solid rgba(var(--accent-rgb), 0.18);
-  transform: rotate(45deg);
-}
-
-.geo-shape-one {
-  top: 12%;
-  left: 7%;
-  clip-path: polygon(50% 0, 100% 88%, 0 88%);
-  animation: geometry-orbit-one 18s linear infinite;
-}
-
-.geo-shape-two {
-  top: 18%;
-  right: 8%;
-  width: 14rem;
-  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
-  animation: geometry-orbit-two 24s linear infinite;
-}
-
-.geo-shape-three {
-  left: 12%;
-  bottom: 12%;
-  width: 13rem;
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  animation: geometry-orbit-three 21s linear infinite;
-}
-
-.geo-shape-four {
-  right: 16%;
-  bottom: 18%;
-  width: 9rem;
-  clip-path: polygon(12% 18%, 88% 4%, 70% 92%, 0 70%);
-  animation: geometry-orbit-four 17s linear infinite;
-}
 
 .site-header {
   padding-top: 1rem;
@@ -717,9 +636,6 @@ main {
   border-radius: 1.2rem;
 }
 
-.content-section {
-  contain-intrinsic-size: 1px 720px;
-}
 
 .contact-copy {
   display: grid;
@@ -773,73 +689,6 @@ main {
   color: var(--color-soft);
 }
 
-@keyframes geometry-orbit-one {
-  0% {
-    opacity: 0.18;
-    transform: translate3d(0, 0, 0) rotate(0deg) scale(0.92);
-  }
-
-  50% {
-    opacity: 0.36;
-    transform: translate3d(8vw, 10vh, 0) rotate(180deg) scale(1.08);
-  }
-
-  100% {
-    opacity: 0.18;
-    transform: translate3d(0, 0, 0) rotate(360deg) scale(0.92);
-  }
-}
-
-@keyframes geometry-orbit-two {
-  0% {
-    opacity: 0.24;
-    transform: translate3d(0, 0, 0) rotate(18deg) scale(1);
-  }
-
-  45% {
-    opacity: 0.42;
-    transform: translate3d(-9vw, 12vh, 0) rotate(150deg) scale(0.86);
-  }
-
-  100% {
-    opacity: 0.24;
-    transform: translate3d(0, 0, 0) rotate(378deg) scale(1);
-  }
-}
-
-@keyframes geometry-orbit-three {
-  0% {
-    opacity: 0.16;
-    transform: translate3d(0, 0, 0) rotate(-12deg) scale(1);
-  }
-
-  55% {
-    opacity: 0.34;
-    transform: translate3d(11vw, -8vh, 0) rotate(-190deg) scale(1.12);
-  }
-
-  100% {
-    opacity: 0.16;
-    transform: translate3d(0, 0, 0) rotate(-372deg) scale(1);
-  }
-}
-
-@keyframes geometry-orbit-four {
-  0% {
-    opacity: 0.18;
-    transform: translate3d(0, 0, 0) rotate(30deg) scale(0.96);
-  }
-
-  50% {
-    opacity: 0.38;
-    transform: translate3d(-7vw, -14vh, 0) rotate(220deg) scale(1.18);
-  }
-
-  100% {
-    opacity: 0.18;
-    transform: translate3d(0, 0, 0) rotate(390deg) scale(0.96);
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -855,10 +704,6 @@ main {
     transform: none;
   }
 
-  .geo-shape {
-    opacity: 0.16;
-    transform: none;
-  }
 }
 
 @media (max-width: 1120px) {
@@ -913,16 +758,6 @@ main {
   .hero-title {
     font-size: clamp(2.8rem, 15vw, 4.6rem);
     padding-bottom: 1.5rem;
-  }
-
-  .geo-shape {
-    width: 8rem;
-    opacity: 0.2;
-  }
-
-  .geo-shape-two,
-  .geo-shape-three {
-    width: 9.5rem;
   }
 
   .project-card {

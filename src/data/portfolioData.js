@@ -2,8 +2,6 @@ export const profile = {
   eyebrow: 'Data Engineer • Software Developer',
   name: 'Diogo Oike',
   headline: 'Building solutions and digital products with data and applied AI.',
-  summary:
-    'Turning raw data, APIs and automation into workflows that feel sharper and easier to use.',
   ctaPrimary: 'Browse projects',
   ctaSecondary: 'Get in touch',
   location: 'Brazil',

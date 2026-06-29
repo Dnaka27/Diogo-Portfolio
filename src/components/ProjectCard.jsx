@@ -7,7 +7,6 @@ const ProjectCard = ({
   demoUrl,
   repoUrl,
   featured,
-  layout = 'compact',
 }) => {
   const links = [
     demoUrl ? { href: demoUrl, label: 'Live demo' } : null,
@@ -15,7 +14,7 @@ const ProjectCard = ({
   ].filter(Boolean)
 
   return (
-    <article className={`project-card project-card-${layout}`}>
+    <article className='project-card'>
       <div className='project-card-header'>
         <div>
           <span className='project-kicker'>{category}</span>

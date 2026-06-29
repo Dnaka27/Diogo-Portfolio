@@ -1,5 +1,6 @@
 import './App.css'
 import { portfolioProjects, profile, skillGroups, socialLinks } from './data/portfolioData'
+import AnimatedBackground from './components/AnimatedBackground'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import ProjectsGrid from './components/ProjectsGrid'
@@ -9,12 +10,7 @@ import ContactSection from './components/ContactSection'
 const App = () => {
   return (
     <div className='app-shell'>
-      <div className='geometric-background' aria-hidden='true'>
-        <span className='geo-shape geo-shape-one' />
-        <span className='geo-shape geo-shape-two' />
-        <span className='geo-shape geo-shape-three' />
-        <span className='geo-shape geo-shape-four' />
-      </div>
+      <AnimatedBackground />
       <Navbar profile={profile} />
       <main>
         <HeroSection profile={profile} />
