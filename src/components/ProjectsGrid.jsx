@@ -14,7 +14,6 @@ const ProjectsGrid = ({ projects }) => {
           <ProjectCard
             key={project.id}
             {...project}
-            layout='compact'
           />
         ))}
       </div>
