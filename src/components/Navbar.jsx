@@ -1,7 +1,7 @@
 const navItems = [
-  { label: 'Projects', target: 'projects' },
-  { label: 'Stack', target: 'skills' },
-  { label: 'Contact', target: 'contact' },
+  { label: 'PROJECTS', target: 'projects' },
+  { label: 'STACK', target: 'skills' },
+  { label: 'CONTACT', target: 'contact' },
 ]
 
 const Navbar = ({ profile }) => {
@@ -19,7 +19,7 @@ const Navbar = ({ profile }) => {
         <div className='site-nav-links'>
           {navItems.map((item) => (
             <a key={item.target} href={`#${item.target}`}>
-              {item.label}
+              <small>{item.label}</small>
             </a>
           ))}
         </div>
