@@ -5,7 +5,7 @@ export const profile = {
   ctaPrimary: 'Browse projects',
   ctaSecondary: 'Get in touch',
   location: 'Brazil',
-  availability: 'Freelance work, opportunities and technical collaborations',
+  availability: 'Full time position, freelance and technical collaborations',
   focusAreas: ['Python', 'Data Engineering', 'Software Development'],
   spotlightTitle: 'From data pipelines to useful interfaces',
   spotlightBody:
