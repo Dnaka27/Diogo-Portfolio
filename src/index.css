@@ -23,6 +23,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Dark mode = blueprint: the cyanotype counterpart of millimeter paper.
+   Every border/text uses --ink, so flipping tokens flips the sheet. */
+:root[data-theme='dark'] {
+  --paper: #0d2440;
+  --card: #123052;
+  --ink: #dfeaf5;
+  --graphite: #92a9c0;
+  --draft: #6fa8e8;
+  --draft-soft: rgba(111, 168, 232, 0.16);
+  --redline: #f0704a;
+  --grid-minor: rgba(223, 234, 245, 0.05);
+  --grid-major: rgba(223, 234, 245, 0.1);
+
+  color-scheme: dark;
+}
+
 html {
   scroll-behavior: smooth;
 }
