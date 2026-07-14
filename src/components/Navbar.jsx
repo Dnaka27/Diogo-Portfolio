@@ -3,9 +3,9 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from '../lib/gsap'
 
 const navItems = [
-  { label: 'PROJECTS', target: 'projects' },
-  { label: 'STACK', target: 'skills' },
-  { label: 'CONTACT', target: 'contact' },
+  { label: 'Projects', target: 'projects' },
+  { label: 'Skills', target: 'skills' },
+  { label: 'Contact', target: 'contact' },
 ]
 
 const Navbar = ({ profile }) => {
@@ -16,10 +16,10 @@ const Navbar = ({ profile }) => {
       const mm = gsap.matchMedia()
 
       mm.add('(prefers-reduced-motion: no-preference)', () => {
-        gsap.from('.site-nav', {
-          y: -24,
+        gsap.from('.top-strip-inner', {
+          y: -18,
           opacity: 0,
-          duration: 0.7,
+          duration: 0.6,
           ease: 'power3.out',
         })
       })
@@ -30,20 +30,20 @@ const Navbar = ({ profile }) => {
   )
 
   return (
-    <header ref={scope} className='site-header'>
-      <nav className='site-nav section-shell' aria-label='Primary navigation'>
-        <a className='site-brand' href='#hero'>
-          <span className='site-brand-mark'>DO</span>
-          <div>
-            <strong>{profile.name}</strong>
-            <small>{profile.eyebrow}</small>
-          </div>
+    <header ref={scope} className='top-strip'>
+      <nav className='wrap top-strip-inner' aria-label='Primary navigation'>
+        <a className='brand' href='#hero'>
+          <span className='brand-mark'>D.O</span>
+          <span>
+            <span className='brand-name'>{profile.name}</span>
+            <span className='brand-role'>{profile.eyebrow}</span>
+          </span>
         </a>
 
-        <div className='site-nav-links'>
+        <div className='strip-links'>
           {navItems.map((item) => (
             <a key={item.target} href={`#${item.target}`}>
-              <small>{item.label}</small>
+              {item.label}
             </a>
           ))}
         </div>
