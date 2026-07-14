@@ -1,8 +1,9 @@
 import { useRef } from 'react'
-import SplitType from 'split-type'
 import { useGSAP } from '@gsap/react'
 import { gsap, revealOnScroll } from '../lib/gsap'
 
+// The signature of the page: contact rendered as the drawing's title
+// block (carimbo) — the bordered table every technical sheet signs with.
 const ContactSection = ({ profile, socialLinks }) => {
   const scope = useRef(null)
 
@@ -11,21 +12,7 @@ const ContactSection = ({ profile, socialLinks }) => {
       const mm = gsap.matchMedia()
 
       mm.add('(prefers-reduced-motion: no-preference)', () => {
-        const split = new SplitType('#contact .section-title', { types: 'words' })
-
-        gsap.from(split.words, {
-          yPercent: 110,
-          opacity: 0,
-          duration: 0.7,
-          ease: 'power3.out',
-          stagger: 0.08,
-          scrollTrigger: { trigger: scope.current, start: 'top 80%', once: true },
-        })
-
-        revealOnScroll('.contact-copy > *:not(.section-title)', scope.current, { y: 28 })
-        revealOnScroll('.contact-link', scope.current, { x: 32, y: 0 })
-
-        return () => split.revert()
+        revealOnScroll('.tb-cell', '.titleblock', { y: 20, stagger: 0.07 })
       })
 
       return () => mm.revert()
@@ -35,43 +22,66 @@ const ContactSection = ({ profile, socialLinks }) => {
 
   const buttonEnter = contextSafe((event) => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    gsap.to(event.currentTarget, { scale: 1.04, duration: 0.3, ease: 'power2.out' })
+    gsap.to(event.currentTarget, { y: -3, duration: 0.25, ease: 'power2.out' })
   })
 
   const buttonLeave = contextSafe((event) => {
-    gsap.to(event.currentTarget, { scale: 1, duration: 0.4, ease: 'power2.out' })
+    gsap.to(event.currentTarget, { y: 0, duration: 0.35, ease: 'power2.out' })
   })
 
-  return (
-    <section ref={scope} id='contact' className='section-shell content-section'>
-      <div className='contact-shell'>
-        <div className='contact-copy'>
-          <h2 className='section-title'>{profile.contactTitle}</h2>
-          <p>{profile.contactBody}</p>
-          <a
-            className='button button-primary'
-            href={socialLinks[0]?.href}
-            onMouseEnter={buttonEnter}
-            onMouseLeave={buttonLeave}
-          >
-            Start a conversation
-          </a>
-        </div>
+  const [email, github, linkedin] = socialLinks
 
-        <div className='contact-list'>
-          {socialLinks.map((link) => (
+  return (
+    <section ref={scope} id='contact' className='zone'>
+      <div className='wrap section-pad'>
+        <p className='crumb'>Title block</p>
+        <h2 className='section-title'>{profile.contactTitle}</h2>
+        <p className='lede'>{profile.contactBody}</p>
+
+        <div className='titleblock'>
+          <div className='tb-cell tb-main'>
+            <h2>Let&apos;s build the next one together.</h2>
+            <p>
+              Email gets the fastest answer — a short note about what you are
+              building is enough to start.
+            </p>
+            <a
+              className='btn btn-primary'
+              href={email?.href}
+              onMouseEnter={buttonEnter}
+              onMouseLeave={buttonLeave}
+            >
+              Start a conversation
+            </a>
+          </div>
+
+          <div className='tb-cell'>
+            <span className='tb-label'>Author</span>
+            <span className='tb-value'>Diogo Oike Kanefuku</span>
+          </div>
+          <div className='tb-cell'>
+            <span className='tb-label'>Location</span>
+            <span className='tb-value'>{profile.location}</span>
+          </div>
+          <div className='tb-cell'>
+            <span className='tb-label'>Open to</span>
+            <span className='tb-value'>{profile.availability}</span>
+          </div>
+          <div className='tb-cell'>
+            <span className='tb-label'>Revision</span>
+            <span className='tb-value'>2026 · Rev A</span>
+          </div>
+
+          {[email, github, linkedin].filter(Boolean).map((link) => (
             <a
               key={link.label}
-              className='contact-link'
+              className='tb-cell tb-link'
               href={link.href}
               target='_blank'
               rel='noreferrer'
             >
-              <div>
-                <strong>{link.label}</strong>
-                <span>{link.value}</span>
-              </div>
-              <span>Open</span>
+              <span className='tb-label'>{link.label}</span>
+              <span className='tb-value'>{link.value}</span>
             </a>
           ))}
         </div>
