@@ -1,4 +1,10 @@
+import Tilt from './Tilt'
+import DataStack from './DataStack'
+import useReveal from '../hooks/useReveal'
+
 const HeroSection = ({ profile }) => {
+  const railRef = useReveal()
+
   return (
     <section id='hero' className='hero section-shell'>
       <div className='hero-copy'>
@@ -14,22 +20,24 @@ const HeroSection = ({ profile }) => {
       </div>
 
       <aside className='hero-stage' aria-label='Profile snapshot'>
-        <div className='hero-stage-card'>
-          <strong>{profile.spotlightTitle}</strong>
+        <DataStack layers={profile.pipeline} />
+
+        <Tilt className='hero-stage-card' maxTilt={7}>
+          <strong className='depth-1'>{profile.spotlightTitle}</strong>
           <p>{profile.spotlightBody}</p>
-          <ul className='tag-list'>
+          <ul className='tag-list depth-1'>
             {profile.focusAreas.map((area) => (
               <li key={area}>{area}</li>
             ))}
           </ul>
-        </div>
+        </Tilt>
 
-        <div className='hero-stage-card'>
-          <strong>{profile.noteTitle}</strong>
+        <Tilt className='hero-stage-card' maxTilt={7}>
+          <strong className='depth-1'>{profile.noteTitle}</strong>
           <p>{profile.noteBody}</p>
-        </div>
+        </Tilt>
 
-        <div className='hero-stage-card'>
+        <Tilt className='hero-stage-card' maxTilt={7}>
           <ul className='stage-list'>
             <li>
               <strong>Based in</strong>
@@ -40,17 +48,17 @@ const HeroSection = ({ profile }) => {
               <span>{profile.availability}</span>
             </li>
           </ul>
-        </div>
+        </Tilt>
       </aside>
 
-      <div className='hero-rail'>
+      <div ref={railRef} className='hero-rail reveal-3d'>
         <p className='eyebrow'>Approach</p>
         <div className='hero-rail-grid'>
           {profile.principles.map((principle) => (
-            <article key={principle.title} className='rail-card'>
-              <strong>{principle.title}</strong>
+            <Tilt as='article' key={principle.title} className='rail-card' maxTilt={7}>
+              <strong className='depth-1'>{principle.title}</strong>
               <p>{principle.body}</p>
-            </article>
+            </Tilt>
           ))}
         </div>
       </div>

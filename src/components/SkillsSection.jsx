@@ -1,4 +1,8 @@
+import useReveal from '../hooks/useReveal'
+
 const SkillsSection = ({ profile, skillGroups }) => {
+  const ref = useReveal()
+
   return (
     <section id='skills' className='section-shell content-section'>
       <div className='section-heading section-heading-split'>
@@ -7,7 +11,7 @@ const SkillsSection = ({ profile, skillGroups }) => {
         </div>
       </div>
 
-      <div className='skills-board'>
+      <div ref={ref} className='skills-board reveal-3d'>
         <article className='skills-intro'>
           <h3>{profile.stackTitle}</h3>
           <p>{profile.stackBody}</p>

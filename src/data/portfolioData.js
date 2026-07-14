@@ -1,12 +1,13 @@
 export const profile = {
   eyebrow: 'Data Engineer • Software Developer',
   name: 'Diogo Oike',
-  headline: 'Building solutions and digital products with data and applied AI.',
+  headline: 'Building solutions and digital products with data',
   ctaPrimary: 'Browse projects',
   ctaSecondary: 'Get in touch',
   location: 'Brazil',
   availability: 'Full time position, freelance and technical collaborations',
   focusAreas: ['Python', 'Data Engineering', 'Software Development'],
+  pipeline: ['COLLECT', 'STRUCTURE', 'DELIVER'],
   spotlightTitle: 'From data pipelines to useful interfaces',
   spotlightBody:
     'My work sits between engineering and clarity: collect information, structure it well, expose it with the right logic, and turn that into something a person can actually use.',

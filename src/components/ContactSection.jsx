@@ -1,7 +1,11 @@
+import useReveal from '../hooks/useReveal'
+
 const ContactSection = ({ profile, socialLinks }) => {
+  const ref = useReveal()
+
   return (
     <section id='contact' className='section-shell content-section'>
-      <div className='contact-shell'>
+      <div ref={ref} className='contact-shell reveal-3d'>
         <div className='contact-copy'>
           <h2 className='section-title'>{profile.contactTitle}</h2>
           <p>{profile.contactBody}</p>
