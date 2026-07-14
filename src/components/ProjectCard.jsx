@@ -32,12 +32,20 @@ const ProjectCard = ({
     gsap.to(scope.current, { x: 0, y: 0, duration: 0.4, ease: 'power2.out' })
   })
 
+  // The whole card opens the repository; clicks on the inner links keep
+  // their own destination and must not also trigger the card.
+  const openRepo = (event) => {
+    if (!repoUrl || event.target.closest('a')) return
+    window.open(repoUrl, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <article
       ref={scope}
-      className='detail-card'
+      className={`detail-card${repoUrl ? ' detail-card-clickable' : ''}`}
       onMouseEnter={hoverIn}
       onMouseLeave={hoverOut}
+      onClick={openRepo}
     >
       <div className='detail-head'>
         <span className='detail-ref'>
