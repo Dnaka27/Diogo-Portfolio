@@ -1,28 +1,42 @@
 :root {
-  font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --font-display: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  /* "Prancha Técnica" — engineering drawing sheet.
+     Palette: edit these tokens first when changing the theme. */
+  --paper: #f1f4f7;
+  --card: #ffffff;
+  --ink: #14273b;
+  --graphite: #5a6b7c;
+  --draft: #2e5fa3;
+  --draft-soft: rgba(46, 95, 163, 0.14);
+  --redline: #d64a22;
+  --grid-minor: rgba(46, 95, 163, 0.07);
+  --grid-major: rgba(46, 95, 163, 0.12);
 
-  /* Palette: edit these tokens first when changing the theme. */
-  --bg-page: #141414;
-  --bg-panel: rgba(20, 20, 20, 0.5);
-  --text-main: #e8e8e8;
-  --text-muted: #aaaaaa;
-  --accent-rgb: 180, 180, 180;
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-body: 'Instrument Sans', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-mono: 'IBM Plex Mono', Consolas, monospace;
 
-  color: var(--text-main);
-  background-color: var(--bg-page);
+  color: var(--ink);
+  font-family: var(--font-body);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color-text: var(--text-main);
-  --color-muted: var(--text-muted);
-  --color-soft: rgba(232, 232, 232, 0.78);
-  --color-accent: rgb(var(--accent-rgb));
-  --color-surface: var(--bg-panel);
-  --color-line: rgba(var(--accent-rgb), 0.22);
-  --shadow-depth: 0 24px 80px rgba(0, 0, 0, 0.58);
-  --shadow-glow: 0 0 30px rgba(var(--accent-rgb), 0.18);
+}
+
+/* Dark mode = blueprint: the cyanotype counterpart of millimeter paper.
+   Every border/text uses --ink, so flipping tokens flips the sheet. */
+:root[data-theme='dark'] {
+  --paper: #0d2440;
+  --card: #123052;
+  --ink: #dfeaf5;
+  --graphite: #92a9c0;
+  --draft: #6fa8e8;
+  --draft-soft: rgba(111, 168, 232, 0.16);
+  --redline: #f0704a;
+  --grid-minor: rgba(223, 234, 245, 0.05);
+  --grid-major: rgba(223, 234, 245, 0.1);
+
+  color-scheme: dark;
 }
 
 html {
@@ -36,9 +50,21 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  color: var(--color-text);
-  background: var(--bg-page);
-  font-weight: 300;
+  color: var(--ink);
+  /* Millimeter graph paper: fine grid with a heavier line every 5 cells. */
+  background:
+    linear-gradient(var(--grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+    linear-gradient(var(--grid-minor) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px),
+    var(--paper);
+  background-size:
+    120px 120px,
+    120px 120px,
+    24px 24px,
+    24px 24px;
+  font-size: 1rem;
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
@@ -53,6 +79,16 @@ a {
 
 button {
   border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--redline);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--redline);
+  color: var(--card);
 }
 
 #root {
