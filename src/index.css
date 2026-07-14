@@ -1,13 +1,14 @@
 :root {
   font-family: "Aptos", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-display: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Cascadia Code", Consolas, "SF Mono", monospace;
 
   /* Palette: edit these tokens first when changing the theme. */
   --bg-page: #141414;
   --bg-panel: rgba(20, 20, 20, 0.5);
   --text-main: #e8e8e8;
   --text-muted: #aaaaaa;
-  --accent-rgb: 180, 180, 180;
+  --accent-rgb: 142, 187, 216;
 
   color: var(--text-main);
   background-color: var(--bg-page);
