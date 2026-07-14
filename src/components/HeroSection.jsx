@@ -1,58 +1,115 @@
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import { gsap } from '../lib/gsap'
+import PipelineDiagram from './PipelineDiagram'
+
 const HeroSection = ({ profile }) => {
+  const scope = useRef(null)
+
+  // The headline is split into masked words at render time (instead of
+  // SplitType) so the last word can carry the redline annotation markup.
+  // The whitespace between words must stay OUTSIDE the inline-block
+  // mask, or the browser strips it and the words collapse together.
+  const words = profile.headline.split(' ')
+  const lastIndex = words.length - 1
+
+  const { contextSafe } = useGSAP(
+    () => {
+      const mm = gsap.matchMedia()
+
+      mm.add('(prefers-reduced-motion: no-preference)', () => {
+        const stroke = scope.current.querySelector('.mark-stroke path')
+        const strokeLength = stroke.getTotalLength()
+        gsap.set(stroke, { strokeDasharray: strokeLength, strokeDashoffset: strokeLength })
+
+        gsap
+          .timeline({ defaults: { ease: 'power3.out' } })
+          .from('.ht-inner', { yPercent: 115, duration: 0.85, stagger: 0.07 }, 0.1)
+          .to(stroke, { strokeDashoffset: 0, duration: 0.5, ease: 'power2.inOut' }, '-=0.35')
+          .from(
+            '.hero-lede, .hero-actions, .hero-facts',
+            { y: 22, opacity: 0, duration: 0.6, stagger: 0.1 },
+            '-=0.3',
+          )
+      })
+
+      return () => mm.revert()
+    },
+    { scope },
+  )
+
+  const buttonEnter = contextSafe((event) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    gsap.to(event.currentTarget, { y: -3, duration: 0.25, ease: 'power2.out' })
+  })
+
+  const buttonLeave = contextSafe((event) => {
+    gsap.to(event.currentTarget, { y: 0, duration: 0.35, ease: 'power2.out' })
+  })
+
   return (
-    <section id='hero' className='hero section-shell'>
-      <div className='hero-copy'>
-        <h1 className='hero-title'>{profile.headline}</h1>
-        <div className='hero-actions'>
-          <a className='button button-primary' href='#projects'>
-            {profile.ctaPrimary}
-          </a>
-          <a className='button button-secondary' href='#contact'>
-            {profile.ctaSecondary}
-          </a>
-        </div>
-      </div>
-
-      <aside className='hero-stage' aria-label='Profile snapshot'>
-        <div className='hero-stage-card'>
-          <strong>{profile.spotlightTitle}</strong>
-          <p>{profile.spotlightBody}</p>
-          <ul className='tag-list'>
-            {profile.focusAreas.map((area) => (
-              <li key={area}>{area}</li>
+    <section ref={scope} id='hero'>
+      <div className='wrap hero'>
+        <div>
+          <h1 className='hero-title'>
+            {words.map((word, index) => (
+              <span key={`${word}-${index}`}>
+                <span className='ht-word'>
+                  <span className='ht-inner'>
+                    {index === lastIndex ? (
+                      <em className='mark'>
+                        {word}
+                        <svg
+                          className='mark-stroke'
+                          viewBox='0 0 100 10'
+                          preserveAspectRatio='none'
+                          aria-hidden='true'
+                        >
+                          <path d='M2 7 C 28 3, 62 9, 98 4' />
+                        </svg>
+                      </em>
+                    ) : (
+                      word
+                    )}
+                  </span>
+                </span>
+                {index < lastIndex ? ' ' : null}
+              </span>
             ))}
+          </h1>
+
+          <p className='hero-lede'>{profile.spotlightBody}</p>
+
+          <div className='hero-actions'>
+            <a
+              className='btn btn-primary'
+              href='#projects'
+              onMouseEnter={buttonEnter}
+              onMouseLeave={buttonLeave}
+            >
+              {profile.ctaPrimary}
+            </a>
+            <a
+              className='btn btn-ghost'
+              href='#contact'
+              onMouseEnter={buttonEnter}
+              onMouseLeave={buttonLeave}
+            >
+              {profile.ctaSecondary}
+            </a>
+          </div>
+
+          <ul className='hero-facts'>
+            <li>
+              Based in <strong>{profile.location}</strong>
+            </li>
+            <li>
+              Open to <strong>{profile.availability}</strong>
+            </li>
           </ul>
         </div>
 
-        <div className='hero-stage-card'>
-          <strong>{profile.noteTitle}</strong>
-          <p>{profile.noteBody}</p>
-        </div>
-
-        <div className='hero-stage-card'>
-          <ul className='stage-list'>
-            <li>
-              <strong>Based in</strong>
-              <span>{profile.location}</span>
-            </li>
-            <li>
-              <strong>Open to</strong>
-              <span>{profile.availability}</span>
-            </li>
-          </ul>
-        </div>
-      </aside>
-
-      <div className='hero-rail'>
-        <p className='eyebrow'>Approach</p>
-        <div className='hero-rail-grid'>
-          {profile.principles.map((principle) => (
-            <article key={principle.title} className='rail-card'>
-              <strong>{principle.title}</strong>
-              <p>{principle.body}</p>
-            </article>
-          ))}
-        </div>
+        <PipelineDiagram stages={profile.pipeline} />
       </div>
     </section>
   )
