@@ -1,17 +1,47 @@
-import useReveal from '../hooks/useReveal'
+import { useRef } from 'react'
+import SplitType from 'split-type'
+import { useGSAP } from '@gsap/react'
+import { gsap, revealOnScroll } from '../lib/gsap'
 
 const SkillsSection = ({ profile, skillGroups }) => {
-  const ref = useReveal()
+  const scope = useRef(null)
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia()
+
+      mm.add('(prefers-reduced-motion: no-preference)', () => {
+        const split = new SplitType('#skills .section-title', { types: 'words' })
+
+        gsap.from(split.words, {
+          yPercent: 110,
+          opacity: 0,
+          duration: 0.7,
+          ease: 'power3.out',
+          stagger: 0.08,
+          scrollTrigger: { trigger: scope.current, start: 'top 80%', once: true },
+        })
+
+        revealOnScroll('.skills-intro', '.skills-board', { x: -40, y: 0 })
+        revealOnScroll('.skill-group', '.skills-board', { y: 36 })
+
+        return () => split.revert()
+      })
+
+      return () => mm.revert()
+    },
+    { scope },
+  )
 
   return (
-    <section id='skills' className='section-shell content-section'>
+    <section ref={scope} id='skills' className='section-shell content-section'>
       <div className='section-heading section-heading-split'>
         <div>
           <h2 className='section-title'>Skills and foundations.</h2>
         </div>
       </div>
 
-      <div ref={ref} className='skills-board reveal-3d'>
+      <div className='skills-board'>
         <article className='skills-intro'>
           <h3>{profile.stackTitle}</h3>
           <p>{profile.stackBody}</p>
