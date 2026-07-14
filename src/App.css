@@ -235,7 +235,6 @@ main {
   background-color: rgba(255, 255, 255, 0.11);
   border-color: rgba(var(--accent-rgb), 0.42);
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.48), 0 0 26px rgba(var(--accent-rgb), 0.18);
-  transform: translateY(-2px);
 }
 
 .hero-stage-card strong,
@@ -413,7 +412,6 @@ main {
   transition:
     border-color 180ms ease,
     box-shadow 180ms ease,
-    transform 160ms ease,
     background-color 180ms ease;
 }
 
@@ -633,55 +631,9 @@ main {
 }
 
 
-/* ── 3D layer ─────────────────────────────────────────────────────────
-   Lightweight 3D built on native CSS transforms: pointer tilt with
-   layered depth (translateZ), cursor glare, scroll fold-in reveals and
-   a pure-CSS isometric data stack. No WebGL, no extra dependencies. */
-
-.tilt {
-  position: relative;
-  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-  transform-style: preserve-3d;
-}
-
-.tilt-glare {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  z-index: 2;
-  opacity: var(--glare, 0);
-  background: radial-gradient(
-    260px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(255, 255, 255, 0.09),
-    transparent 65%
-  );
-  transition: opacity 260ms ease;
-}
-
-.depth-1 {
-  transform: translateZ(22px);
-}
-
-.depth-2 {
-  transform: translateZ(38px);
-}
-
-.reveal-3d {
-  opacity: 0;
-  transform: perspective(1000px) rotateX(8deg) translateY(30px);
-  transform-origin: top center;
-  transition:
-    opacity 700ms ease,
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-3d.is-revealed {
-  opacity: 1;
-  transform: none;
-  will-change: auto;
-}
+/* ── Visual 3D estático + hooks de animação GSAP ─────────────────────
+   O data stack isométrico é CSS puro; rotação, flutuação, entradas e
+   reveals de scroll são conduzidos por GSAP (ver src/lib/gsap.js). */
 
 .data-stack {
   display: grid;
@@ -695,17 +647,14 @@ main {
   width: 190px;
   height: 190px;
   transform-style: preserve-3d;
-  transform: rotateX(62deg) rotate(45deg);
-  animation: stack-orbit 26s linear infinite;
+  transform: rotateX(62deg);
 }
 
-@keyframes stack-orbit {
-  from {
-    transform: rotateX(62deg) rotate(45deg);
-  }
-  to {
-    transform: rotateX(62deg) rotate(405deg);
-  }
+.data-stack-spinner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotate(45deg);
 }
 
 .data-plane {
