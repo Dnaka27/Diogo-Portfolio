@@ -339,7 +339,7 @@
 }
 
 .figure svg {
-  width: 100%;
+  width: 125%;
   height: auto;
   display: block;
 }
@@ -600,6 +600,16 @@
 .spec-row {
   display: grid;
   grid-template-columns: minmax(9rem, 0.4fr) minmax(0, 1fr);
+  transition: background-color 0.2s ease;
+}
+
+.spec-row:hover {
+  background: var(--redline);
+}
+
+.spec-row:hover .spec-key,
+.spec-row:hover .spec-val {
+  color: #fff;
 }
 
 .spec-row + .spec-row {
@@ -662,6 +672,16 @@
   background: var(--card);
   padding: 1.1rem 1.2rem;
   min-width: 0;
+  transition: background-color 0.2s ease;
+}
+
+.tb-cell:hover {
+  background: var(--redline);
+}
+
+.tb-cell:hover .tb-label,
+.tb-cell:hover .tb-value {
+  color: #fff;
 }
 
 .tb-main {
@@ -709,16 +729,16 @@
   transition: color 160ms ease;
 }
 
-.tb-link:hover .tb-value,
-.tb-link:focus-visible .tb-value {
-  color: var(--redline);
-}
-
 .tb-link .tb-value::after {
   content: ' ↗';
   font-family: var(--font-mono);
   font-size: 0.8em;
   color: var(--redline);
+}
+
+.tb-link:hover .tb-value::after,
+.tb-link:focus-visible .tb-value::after {
+  color: #fff;
 }
 
 /* ── Sheet footer ── */
