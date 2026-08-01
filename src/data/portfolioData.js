@@ -71,15 +71,15 @@ export const portfolioProjects = [
     featured: false,
   },
   {
-    id: 'ai-web-searcher',
-    title: 'AI Web Searcher',
+    id: 'repo-explainer',
+    title: 'Repo Explainer',
     summary:
-      'An AI-powered search application built with Python and Google APIs to retrieve, process and summarize web information.',
+      'A tool that analyzes a public GitHub repository and uses Google Gemini to generate a flowchart, an architecture diagram and a summary of how the codebase works.',
     category: 'AI Tooling',
     year: '2026',
-    stack: ['Python', 'Google APIs', 'Information Retrieval'],
-    demoUrl: null,
-    repoUrl: 'https://github.com/Dnaka27/AI-WebSearch',
+    stack: ['Python', 'FastAPI', 'React', 'Google Gemini'],
+    demoUrl: 'https://repo-explainer-weld.vercel.app',
+    repoUrl: 'https://github.com/Dnaka27/repo-explainer',
     featured: false,
   },
 ]
