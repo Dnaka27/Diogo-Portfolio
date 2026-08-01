@@ -35,16 +35,16 @@ export const profile = {
 
 export const portfolioProjects = [
   {
-    id: 'cyber-attacks',
-    title: 'Cyber Attacks',
+    id: 'repo-explainer',
+    title: 'Repo Explainer',
     summary:
-      'A cyber attacks analysis application using a Kaggle dataset, built with Python and Streamlit.',
-    category: 'Data Science',
+      'A tool that analyzes a public GitHub repository and uses Google Gemini to generate a flowchart, an architecture diagram and a summary of how the codebase works.',
+    category: 'AI Tooling',
     year: '2026',
-    stack: ['Python', 'Streamlit', 'Data Analysis'],
-    demoUrl: null,
-    repoUrl: 'https://github.com/Dnaka27/cyber-attacks-dashboard',
-    featured: true,
+    stack: ['Python', 'FastAPI', 'React', 'Google Gemini'],
+    demoUrl: 'https://repo-explainer-weld.vercel.app',
+    repoUrl: 'https://github.com/Dnaka27/repo-explainer',
+    featured: false,
   },
   {
     id: 'rag-gemini',
@@ -71,16 +71,16 @@ export const portfolioProjects = [
     featured: false,
   },
   {
-    id: 'repo-explainer',
-    title: 'Repo Explainer',
+    id: 'cyber-attacks',
+    title: 'Cyber Attacks',
     summary:
-      'A tool that analyzes a public GitHub repository and uses Google Gemini to generate a flowchart, an architecture diagram and a summary of how the codebase works.',
-    category: 'AI Tooling',
+      'A cyber attacks analysis application using a Kaggle dataset, built with Python and Streamlit.',
+    category: 'Data Science',
     year: '2026',
-    stack: ['Python', 'FastAPI', 'React', 'Google Gemini'],
-    demoUrl: 'https://repo-explainer-weld.vercel.app',
-    repoUrl: 'https://github.com/Dnaka27/repo-explainer',
-    featured: false,
+    stack: ['Python', 'Streamlit', 'Data Analysis'],
+    demoUrl: null,
+    repoUrl: 'https://github.com/Dnaka27/cyber-attacks-dashboard',
+    featured: true,
   },
 ]
 
