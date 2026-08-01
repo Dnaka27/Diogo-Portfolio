@@ -44,7 +44,7 @@ export const portfolioProjects = [
     stack: ['Python', 'FastAPI', 'React', 'Google Gemini'],
     demoUrl: 'https://repo-explainer-weld.vercel.app',
     repoUrl: 'https://github.com/Dnaka27/repo-explainer',
-    featured: false,
+    featured: true,
   },
   {
     id: 'rag-gemini',
@@ -80,7 +80,7 @@ export const portfolioProjects = [
     stack: ['Python', 'Streamlit', 'Data Analysis'],
     demoUrl: null,
     repoUrl: 'https://github.com/Dnaka27/cyber-attacks-dashboard',
-    featured: true,
+    featured: false,
   },
 ]
 
