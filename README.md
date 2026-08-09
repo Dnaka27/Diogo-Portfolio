@@ -2,7 +2,7 @@
 
 Personal portfolio website showcasing projects and skills in web development and data engineering.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://diogo-portfolio-sync.vercel.app/)
+<a href="https://www.diogooike.com/">Live Portfolio</a>
 
 ---
 
