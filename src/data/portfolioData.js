@@ -54,7 +54,7 @@ export const portfolioProjects = [
     category: 'Artificial Intelligence',
     year: '2025',
     stack: ['Python', 'Google Gemini', 'Embeddings'],
-    demoUrl: null,
+    demoUrl: 'https://rag-gemini-embedding.vercel.app',
     repoUrl: 'https://github.com/Dnaka27/RAG-Gemini-embedding',
     featured: true,
   },
