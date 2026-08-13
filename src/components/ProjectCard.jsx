@@ -32,20 +32,23 @@ const ProjectCard = ({
     gsap.to(scope.current, { x: 0, y: 0, duration: 0.4, ease: 'power2.out' })
   })
 
-  // The whole card opens the repository; clicks on the inner links keep
-  // their own destination and must not also trigger the card.
-  const openRepo = (event) => {
-    if (!repoUrl || event.target.closest('a')) return
-    window.open(repoUrl, '_blank', 'noopener,noreferrer')
+  // The whole card opens the live demo (falling back to the repository when
+  // there isn't one); clicks on the inner links keep their own destination
+  // and must not also trigger the card.
+  const cardTarget = demoUrl || repoUrl
+
+  const openCardTarget = (event) => {
+    if (!cardTarget || event.target.closest('a')) return
+    window.open(cardTarget, '_blank', 'noopener,noreferrer')
   }
 
   return (
     <article
       ref={scope}
-      className={`detail-card${repoUrl ? ' detail-card-clickable' : ''}`}
+      className={`detail-card${cardTarget ? ' detail-card-clickable' : ''}`}
       onMouseEnter={hoverIn}
       onMouseLeave={hoverOut}
-      onClick={openRepo}
+      onClick={openCardTarget}
     >
       <div className='detail-head'>
         <span className='detail-ref'>
