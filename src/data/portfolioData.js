@@ -65,7 +65,7 @@ export const portfolioProjects = [
       'A computer-vision hand gesture controller using real-time tracking to drive interactions and system inputs.',
     category: 'Computer Vision',
     year: '2025',
-    stack: ['Python', 'Computer Vision', 'Automation'],
+    stack: ['Python', 'MediaPipe', 'PyAutoGUI'],
     demoUrl: null,
     repoUrl: 'https://github.com/Dnaka27/Computer_vision-Hand_control',
     featured: false,

@@ -471,11 +471,13 @@
 
 .chip-row li {
   padding: 0.28rem 0.6rem;
-  border: 1px solid var(--draft);
+  border: 1px solid var(--chip-color, var(--draft));
   border-radius: 2px;
-  color: var(--draft);
+  color: var(--chip-color, var(--draft));
+  background: color-mix(in srgb, var(--chip-color, var(--draft)) 14%, transparent);
   font-family: var(--font-mono);
   font-size: 0.66rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
 }
 
