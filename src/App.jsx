@@ -1,5 +1,11 @@
 import './App.css'
-import { portfolioProjects, profile, skillGroups, socialLinks } from './data/portfolioData'
+import {
+  certificates,
+  portfolioProjects,
+  profile,
+  skillGroups,
+  socialLinks,
+} from './data/portfolioData'
 import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import ProjectsGrid from './components/ProjectsGrid'
@@ -13,7 +19,11 @@ const App = () => {
       <main>
         <HeroSection profile={profile} />
         <ProjectsGrid projects={portfolioProjects} />
-        <SkillsSection profile={profile} skillGroups={skillGroups} />
+        <SkillsSection
+          profile={profile}
+          skillGroups={skillGroups}
+          certificates={certificates}
+        />
         <ContactSection profile={profile} socialLinks={socialLinks} />
       </main>
       <footer className='sheet-foot'>

@@ -103,19 +103,6 @@ export const skillGroups = [
     ],
   },
   {
-    title: 'Courses & Certificates',
-    skills: [
-      'Google AI Essentials',
-      'Databricks Fundamentals',
-      "Datacamp Azure Introduction",
-      'DIO Amazon Web Services',
-      'DIO Potencia Tech Data Science',
-      'Coursera Google Data Analytics',
-      'Udemy Python Bootcamp',
-      'Cubos Academy Data Analysis'
-    ],
-  },
-  {
     title: 'Academic Foundations',
     skills: [
       'Information Technology Management',
@@ -126,6 +113,17 @@ export const skillGroups = [
       'Process Management'
     ],
   },
+]
+
+export const certificates = [
+  'Google AI Essentials',
+  'Databricks Fundamentals',
+  'Datacamp Azure Introduction',
+  'DIO Amazon Web Services',
+  'DIO Potencia Tech Data Science',
+  'Coursera Google Data Analytics',
+  'Udemy Python Bootcamp',
+  'Cubos Academy Data Analysis',
 ]
 
 export const socialLinks = [
