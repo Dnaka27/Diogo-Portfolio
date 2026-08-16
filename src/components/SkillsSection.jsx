@@ -12,11 +12,13 @@ const TABS = [
 // Right: spec table — a bill of materials for the skill set.
 const SkillsSection = ({ profile, skillGroups, certificates }) => {
   const scope = useRef(null)
-  const trackRef = useRef(null)
   const [activeTab, setActiveTab] = useState('notes')
+  const [certIndex, setCertIndex] = useState(0)
 
-  const scrollCerts = (direction) => {
-    trackRef.current?.scrollBy({ left: direction * 260, behavior: 'smooth' })
+  const showCert = (direction) => {
+    setCertIndex(
+      (current) => (current + direction + certificates.length) % certificates.length,
+    )
   }
 
   useGSAP(
@@ -134,26 +136,40 @@ const SkillsSection = ({ profile, skillGroups, certificates }) => {
             id='panel-certificates'
             aria-labelledby='tab-certificates'
           >
-            <div className='cert-track' ref={trackRef}>
-              {certificates.map((cert, index) => (
-                <div className='cert-card' key={cert}>
-                  <span className='cert-index'>C.{String(index + 1).padStart(2, '0')}</span>
-                  <p className='cert-name'>{cert}</p>
-                </div>
-              ))}
+            <div className='cert-viewport'>
+              <div
+                className='cert-track'
+                style={{ transform: `translateX(-${certIndex * 100}%)` }}
+              >
+                {certificates.map((cert, index) => (
+                  <div
+                    className='cert-card'
+                    key={cert}
+                    aria-hidden={certIndex !== index}
+                  >
+                    <span className='cert-index'>
+                      C.{String(index + 1).padStart(2, '0')}
+                    </span>
+                    <p className='cert-name'>{cert}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className='cert-nav'>
               <button
                 type='button'
-                onClick={() => scrollCerts(-1)}
+                onClick={() => showCert(-1)}
                 aria-label='Previous certificate'
               >
                 &larr;
               </button>
+              <span className='cert-counter'>
+                {String(certIndex + 1).padStart(2, '0')} / {String(certificates.length).padStart(2, '0')}
+              </span>
               <button
                 type='button'
-                onClick={() => scrollCerts(1)}
+                onClick={() => showCert(1)}
                 aria-label='Next certificate'
               >
                 &rarr;
