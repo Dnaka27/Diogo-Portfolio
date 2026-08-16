@@ -2,6 +2,18 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from '../lib/gsap'
 
+const CHIP_TONES = 5
+
+// Deterministic tone per label, so the same technology always gets the
+// same color across every project card.
+const chipTone = (label) => {
+  let hash = 0
+  for (let i = 0; i < label.length; i += 1) {
+    hash = (hash * 31 + label.charCodeAt(i)) % CHIP_TONES
+  }
+  return hash + 1
+}
+
 // Projects are presented as numbered detail views of the drawing:
 // DETAIL A, DETAIL B, … — the reference letter comes from the grid order.
 const ProjectCard = ({
@@ -64,7 +76,9 @@ const ProjectCard = ({
 
       <ul className='chip-row' aria-label={`${title} technology stack`}>
         {stack.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item} style={{ '--chip-color': `var(--tone-${chipTone(item)})` }}>
+            {item}
+          </li>
         ))}
       </ul>
 

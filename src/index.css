@@ -11,6 +11,14 @@
   --grid-minor: rgba(46, 95, 163, 0.07);
   --grid-major: rgba(46, 95, 163, 0.12);
 
+  /* Stack chip tones — distinct hues for tagging technologies, kept out of
+     --draft/--redline since those already carry their own UI meaning. */
+  --tone-1: #2e5fa3;
+  --tone-2: #0f7a6c;
+  --tone-3: #96650b;
+  --tone-4: #6e3fa3;
+  --tone-5: #a83d64;
+
   --font-display: 'Bricolage Grotesque', 'Segoe UI', 'Helvetica Neue', sans-serif;
   --font-body: 'Instrument Sans', 'Segoe UI', 'Helvetica Neue', sans-serif;
   --font-mono: 'IBM Plex Mono', Consolas, monospace;
@@ -35,6 +43,12 @@
   --redline: #f0704a;
   --grid-minor: rgba(223, 234, 245, 0.05);
   --grid-major: rgba(223, 234, 245, 0.1);
+
+  --tone-1: #6fa8e8;
+  --tone-2: #4fd1c5;
+  --tone-3: #f0b429;
+  --tone-4: #b98af0;
+  --tone-5: #f28fb0;
 
   color-scheme: dark;
 }
