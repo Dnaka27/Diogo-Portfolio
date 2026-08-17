@@ -72,15 +72,15 @@ export const portfolioProjects = [
   },
   {
     id: 'cyber-attacks',
-    title: 'Cyber Attacks',
+    title: 'Cyber Attacks Dashboard',
     summary:
-      'A cyber attacks analysis application using a Kaggle dataset, built with Python and Streamlit.',
-    category: 'Data Science',
+      'An interactive dashboard analyzing the financial and market impact of cyber attacks from a Kaggle dataset, with client-side filtering across attack vectors, sectors and stock market reaction.',
+    category: 'Data Visualization',
     year: '2026',
-    stack: ['Python', 'Streamlit', 'Data Analysis'],
-    demoUrl: null,
+    stack: ['React', 'Vite', 'Plotly.js'],
+    demoUrl: 'https://cyber-attacks-dashboard.vercel.app',
     repoUrl: 'https://github.com/Dnaka27/cyber-attacks-dashboard',
-    featured: false,
+    featured: true,
   },
 ]
 
