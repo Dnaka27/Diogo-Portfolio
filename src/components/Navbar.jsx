@@ -4,7 +4,7 @@ import { gsap } from '../lib/gsap'
 
 const navItems = [
   { label: 'Projects', target: 'projects' },
-  { label: 'Skills', target: 'skills' },
+  { label: 'Background', target: 'background' },
   { label: 'Contact', target: 'contact' },
 ]
 

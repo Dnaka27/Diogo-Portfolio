@@ -42,7 +42,7 @@ const ContactSection = ({ profile, socialLinks }) => {
           <div className='tb-cell tb-main'>
             <h2>Let&apos;s build the next one together.</h2>
             <p>
-              Email gets the fastest answer — a short note about what you are
+              a short note about what you are
               building is enough to start.
             </p>
             <a

@@ -11,26 +11,9 @@ export const profile = {
   spotlightTitle: 'From data pipelines to useful interfaces',
   spotlightBody:
     'My work sits between engineering and clarity: collect information, structure it well, expose it with the right logic, and turn that into something a person can actually use.',
-  noteTitle: 'Academic background',
-  noteBody:
-    'Graduated in Information Technology Management, with studies across software development, network infrastructure, systems processes, people management and business fundamentals.',
-  principles: [
-    {
-      title: 'Automation first',
-      body: 'I like to solve problems and tasks by building interfaces and automations that solve a real operational need.',
-    },
-    {
-      title: 'Data driven',
-      body: 'I rely on data, process signals and measurable outcomes to guide what gets built and what gets improved.',
-    },
-  ],
-  stackTitle:
-    'A profile shaped by software, data and implementation fundamentals.',
-  stackBody:
-    'The strongest axis is Python and data-oriented problem solving, supported by web fundamentals and SQL.',
   contactTitle: 'Contact',
   contactBody:
-    'If you are building a dashboard, automation, software service or data product, I am interested in collaborations where clean logic and practical delivery matter.',
+    '',
 }
 
 export const portfolioProjects = [
@@ -84,46 +67,144 @@ export const portfolioProjects = [
   },
 ]
 
-export const skillGroups = [
+// Two parallel paths, each listed oldest first.
+export const background = [
   {
-    title: 'Soft Skills',
-    skills: ['Teamwork', 'Emotional Intelligence', 'Communication', 'Adaptability'],
-  },
-  {
-    title: 'Hard Skills',
-    skills: [
+    id: 'academic',
+    title: 'Academic',
+    steps: [
       {
-        label: 'Web Development',
-        items: ['HTML, CSS, JavaScript', 'React, Node.js'],
+        id: 'technologist',
+        period: 'Graduation · 2021 – 2025',
+        title: 'Information Technology Management',
+        subjects: [
+          {
+            title: 'Software development',
+            topics: [
+              { label: 'Programming logic', stack: ['C++'] },
+              { label: 'Object-oriented programming', stack: ['Java'] },
+              { label: 'Web development', stack: ['HTML', 'CSS', 'JavaScript', 'PHP'] },
+              { label: 'Systems development processes' },
+            ],
+          },
+          {
+            title: 'Data',
+            topics: [
+              { label: 'Databases', stack: ['SQL'] },
+              { label: 'Programming fundamentals and data science', stack: ['Python'] },
+            ],
+          },
+          {
+            title: 'Infrastructure and security',
+            topics: [
+              { label: 'Operating systems (Windows and Linux)' },
+              { label: 'Computer networks' },
+              { label: 'Introduction to cybersecurity with Linux' },
+            ],
+          },
+          {
+            title: 'Management',
+            summary: 'People, process, economic and financial management, and auditing.',
+          },
+        ],
       },
       {
-        label: 'Data Engineering',
-        items: ['Python, SQL', 'Pandas, Spark', 'Airflow'],
+        id: 'mba',
+        period: 'Postgraduate · 2026 – In progress',
+        title: 'MBA in Data Science and Artificial Intelligence',
+        subjects: [
+          {
+            title: 'Data science',
+            stack: ['Python', 'R'],
+            summary:
+              'Data mining, predictive analytics, machine learning and artificial neural networks.',
+          },
+          {
+            title: 'Infrastructure',
+            summary: 'Cloud computing and big data.',
+          },
+          {
+            title: 'Applied AI',
+            summary:
+              'AI in business, process automation with RPA and autonomous vehicles, supporting decisions in healthcare, finance, industry and technology.',
+          },
+          {
+            title: 'Management',
+            summary: 'Business intelligence and strategy.',
+          },
+        ],
       },
     ],
   },
   {
-    title: 'Courses & Certificates',
-    skills: [
-      'Google AI Essentials',
-      'Databricks Fundamentals',
-      "Datacamp Azure Introduction",
-      'DIO Amazon Web Services',
-      'DIO Potencia Tech Data Science',
-      'Coursera Google Data Analytics',
-      'Udemy Python Bootcamp',
-      'Cubos Academy Data Analysis'
-    ],
-  },
-  {
-    title: 'Academic Foundations',
-    skills: [
-      'Information Technology Management',
-      'Network Infrastructure',
-      'Systems Development Processes',
-      'People Management',
-      'Economic and Financial Management',
-      'Process Management'
+    id: 'professional',
+    title: 'Professional',
+    steps: [
+      {
+        id: 'equal',
+        period: 'Apr 2024 – Oct 2025',
+        title: 'BI Analyst and Data Engineer',
+        org: 'Equal BI',
+        place: 'Florianópolis · Hybrid',
+        context:
+          "ABC EVO: analytics platform for Latin America's largest gym management software, serving 2,000+ gyms.",
+        subjects: [
+          {
+            title: 'Data engineering',
+            topics: [
+              { label: 'Built ETL pipelines orchestrated on the cloud', stack: ['SQL', 'Python', 'Azure'] },
+              {
+                label: 'Implemented async ingestion from Meta Ads and Kommo CRM APIs into the Bronze layer of a Medallion Architecture',
+              },
+              { label: 'Automated data validation and monitoring', stack: ['PySpark', 'Pandas'] },
+            ],
+          },
+          {
+            title: 'Cloud',
+            topics: [
+              {
+                label: 'Optimized ETL code, cutting VM execution time lowering cloud costs',
+                stack: ['Azure Virtual Machines'],
+              },
+              {
+                label: 'Integrated and managed data across cloud platforms',
+                stack: ['GCP', 'BigQuery', 'Compute Engine'],
+              },
+            ],
+          },
+          {
+            title: 'BI',
+            topics: [
+              { label: 'Modeled data and built dashboards', stack: ['DAX', 'Power BI'] },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'ilha-service',
+        period: 'Oct 2025 – Apr 2026',
+        title: 'Data Engineer and Systems Analyst',
+        org: 'Ilha Service',
+        place: 'Florianópolis · On-site',
+        context: 'Client: SES/SC, Santa Catarina State Health Department.',
+        subjects: [
+          {
+            title: 'Data engineering',
+            topics: [
+              { label: 'Developed ETL pipelines integrating REST APIs and databases', stack: ['Python', 'PostgreSQL'] },
+              { label: 'Implemented event-driven ingestion with producers and consumers', stack: ['Kafka'] },
+              { label: 'Orchestrated pipelines', stack: ['Airflow', 'Pentaho'] },
+              { label: 'Collected data through web scraping', stack: ['Requests', 'BeautifulSoup'] },
+            ],
+          },
+          {
+            title: 'BI',
+            topics: [
+              { label: 'Processed data and built views and aggregate tables', stack: ['Pandas', 'PySpark', 'Power BI'] },
+            ],
+          },
+        ],
+      },
     ],
   },
 ]
