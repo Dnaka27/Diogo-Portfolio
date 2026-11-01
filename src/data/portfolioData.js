@@ -159,7 +159,7 @@ export const background = [
             title: 'Cloud',
             topics: [
               {
-                label: 'Optimized ETL code, cutting VM execution time lowering cloud costs',
+                label: 'Optimized ETL code, cutting VM execution time and lowering cloud costs',
                 stack: ['Azure Virtual Machines'],
               },
               {

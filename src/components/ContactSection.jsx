@@ -21,10 +21,7 @@ const ContactSection = ({ profile, socialLinks }) => {
         <div className='titleblock'>
           <div className='tb-cell tb-main'>
             <h2>Let&apos;s build the next one together.</h2>
-            <p>
-              a short note about what you are
-              building is enough to start.
-            </p>
+            <p>A short note about what you are building is enough to start.</p>
             <a className='btn btn-primary' href={email?.href}>
               Start a conversation
             </a>
