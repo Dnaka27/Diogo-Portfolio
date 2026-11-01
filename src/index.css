@@ -69,6 +69,10 @@
 
 html {
   scroll-behavior: smooth;
+  /* Keeps anchored sections clear of the sticky nav. */
+  scroll-padding-top: 4.25rem;
+  /* Only here: on body too it would make body a scroll container and
+     stop the sticky nav from sticking. */
   overflow-x: hidden;
 }
 
@@ -94,7 +98,6 @@ body {
     24px 24px;
   font-size: 1rem;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 a,
