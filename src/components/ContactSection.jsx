@@ -17,7 +17,6 @@ const ContactSection = ({ profile, socialLinks }) => {
       <div className='wrap section-pad'>
         <p className='crumb'>Title block</p>
         <h2 className='section-title'>{profile.contactTitle}</h2>
-        <p className='lede'>{profile.contactBody}</p>
 
         <div className='titleblock'>
           <div className='tb-cell tb-main'>
