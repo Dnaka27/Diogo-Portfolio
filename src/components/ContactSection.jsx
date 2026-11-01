@@ -10,7 +10,7 @@ const ContactSection = ({ profile, socialLinks }) => {
     revealOnScroll('.tb-cell', '.titleblock', { y: 20, stagger: 0.07 })
   })
 
-  const [email, github, linkedin] = socialLinks
+  const email = socialLinks.find((link) => link.href.startsWith('mailto:'))
 
   return (
     <section ref={scope} id='contact' className='zone'>
@@ -48,18 +48,22 @@ const ContactSection = ({ profile, socialLinks }) => {
             <span className='tb-value'>2026 · Rev A</span>
           </div>
 
-          {[email, github, linkedin].filter(Boolean).map((link) => (
-            <a
-              key={link.label}
-              className='tb-cell tb-link'
-              href={link.href}
-              target='_blank'
-              rel='noreferrer'
-            >
-              <span className='tb-label'>{link.label}</span>
-              <span className='tb-value'>{link.value}</span>
-            </a>
-          ))}
+          {socialLinks.map((link) => {
+            // mailto: hands off to the mail client; a new tab would stay blank.
+            const external = link !== email
+            return (
+              <a
+                key={link.label}
+                className='tb-cell tb-link'
+                href={link.href}
+                target={external ? '_blank' : undefined}
+                rel={external ? 'noreferrer' : undefined}
+              >
+                <span className='tb-label'>{link.label}</span>
+                <span className='tb-value'>{link.value}</span>
+              </a>
+            )
+          })}
         </div>
       </div>
     </section>

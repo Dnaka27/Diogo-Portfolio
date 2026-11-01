@@ -723,12 +723,16 @@
   transition: background-color 0.2s ease;
 }
 
-.tb-cell:hover {
+/* Not the main cell: its button is redline too and would disappear. */
+.tb-cell:not(.tb-main):hover,
+.tb-link:focus-visible {
   background: var(--redline);
 }
 
-.tb-cell:hover .tb-label,
-.tb-cell:hover .tb-value {
+.tb-cell:not(.tb-main):hover .tb-label,
+.tb-cell:not(.tb-main):hover .tb-value,
+.tb-link:focus-visible .tb-label,
+.tb-link:focus-visible .tb-value {
   color: #fff;
 }
 
@@ -774,7 +778,6 @@
 .tb-link {
   display: block;
   text-decoration: none;
-  transition: color 160ms ease;
 }
 
 .tb-link .tb-value::after {
