@@ -1,6 +1,5 @@
 import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import { gsap } from '../lib/gsap'
+import { gsap, useEntrance } from '../lib/gsap'
 
 const SOURCES = [
   { y: 60, label: 'apis' },
@@ -15,37 +14,28 @@ const STAGE_X = [150, 255, 360]
 const PipelineDiagram = ({ stages = [] }) => {
   const scope = useRef(null)
 
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia()
+  useEntrance(scope, () => {
+    const edges = gsap.utils.toArray('.dag-edge')
+    edges.forEach((path) => {
+      const length = path.getTotalLength()
+      gsap.set(path, { strokeDasharray: length, strokeDashoffset: length })
+    })
 
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
-        const edges = gsap.utils.toArray('.dag-edge')
-        edges.forEach((path) => {
-          const length = path.getTotalLength()
-          gsap.set(path, { strokeDasharray: length, strokeDashoffset: length })
-        })
-
-        gsap
-          .timeline({ delay: 0.55, defaults: { ease: 'power2.out' } })
-          .from('.dag-source, .dag-node', {
-            scale: 0,
-            transformOrigin: 'center',
-            duration: 0.45,
-            stagger: 0.07,
-          })
-          .to(
-            edges,
-            { strokeDashoffset: 0, duration: 0.9, stagger: 0.08, ease: 'power2.inOut' },
-            '-=0.3',
-          )
-          .from('.dag-label, .fig-caption', { opacity: 0, y: 6, stagger: 0.05 }, '-=0.5')
+    gsap
+      .timeline({ delay: 0.55, defaults: { ease: 'power2.out' } })
+      .from('.dag-source, .dag-node', {
+        scale: 0,
+        transformOrigin: 'center',
+        duration: 0.45,
+        stagger: 0.07,
       })
-
-      return () => mm.revert()
-    },
-    { scope },
-  )
+      .to(
+        edges,
+        { strokeDashoffset: 0, duration: 0.9, stagger: 0.08, ease: 'power2.inOut' },
+        '-=0.3',
+      )
+      .from('.dag-label, .fig-caption', { opacity: 0, y: 6, stagger: 0.05 }, '-=0.5')
+  })
 
   return (
     <figure ref={scope} className='figure' aria-hidden='true'>

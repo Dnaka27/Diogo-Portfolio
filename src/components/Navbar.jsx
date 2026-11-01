@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
-import { useGSAP } from '@gsap/react'
-import { gsap } from '../lib/gsap'
+import { gsap, useEntrance } from '../lib/gsap'
 
 const navItems = [
   { label: 'Projects', target: 'projects' },
@@ -15,26 +14,20 @@ const Navbar = ({ profile }) => {
     () => document.documentElement.dataset.theme || 'light',
   )
 
-  useGSAP(
-    () => {
-      const mm = gsap.matchMedia()
+  useEntrance(scope, () => {
+    gsap.from('.top-strip-inner', {
+      y: -18,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power3.out',
+    })
+  })
 
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
-        gsap.from('.top-strip-inner', {
-          y: -18,
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-        })
-      })
-
-      return () => mm.revert()
-    },
-    { scope },
-  )
+  const isDark = theme === 'dark'
+  const toggleLabel = isDark ? 'Switch to paper theme' : 'Switch to blueprint theme'
 
   const toggleTheme = () => {
-    const next = theme === 'dark' ? 'light' : 'dark'
+    const next = isDark ? 'light' : 'dark'
     document.documentElement.dataset.theme = next
     try {
       localStorage.setItem('theme', next)
@@ -68,16 +61,12 @@ const Navbar = ({ profile }) => {
             type='button'
             className='theme-toggle'
             onClick={toggleTheme}
-            aria-pressed={theme === 'dark'}
-            aria-label={
-              theme === 'dark' ? 'Switch to paper theme' : 'Switch to blueprint theme'
-            }
-            title={
-              theme === 'dark' ? 'Switch to paper theme' : 'Switch to blueprint theme'
-            }
+            aria-pressed={isDark}
+            aria-label={toggleLabel}
+            title={toggleLabel}
           >
             <span className='theme-toggle-swatch' aria-hidden='true' />
-            {theme === 'dark' ? 'Paper' : 'Blueprint'}
+            {isDark ? 'Paper' : 'Blueprint'}
           </button>
         </div>
       </nav>

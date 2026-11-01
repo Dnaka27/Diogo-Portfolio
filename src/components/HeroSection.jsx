@@ -1,6 +1,5 @@
 import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import { gsap } from '../lib/gsap'
+import { gsap, useEntrance } from '../lib/gsap'
 import PipelineDiagram from './PipelineDiagram'
 
 const HeroSection = ({ profile }) => {
@@ -13,38 +12,20 @@ const HeroSection = ({ profile }) => {
   const words = profile.headline.split(' ')
   const lastIndex = words.length - 1
 
-  const { contextSafe } = useGSAP(
-    () => {
-      const mm = gsap.matchMedia()
+  useEntrance(scope, () => {
+    const stroke = scope.current.querySelector('.mark-stroke path')
+    const strokeLength = stroke.getTotalLength()
+    gsap.set(stroke, { strokeDasharray: strokeLength, strokeDashoffset: strokeLength })
 
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
-        const stroke = scope.current.querySelector('.mark-stroke path')
-        const strokeLength = stroke.getTotalLength()
-        gsap.set(stroke, { strokeDasharray: strokeLength, strokeDashoffset: strokeLength })
-
-        gsap
-          .timeline({ defaults: { ease: 'power3.out' } })
-          .from('.ht-inner', { yPercent: 115, duration: 0.85, stagger: 0.07 }, 0.1)
-          .to(stroke, { strokeDashoffset: 0, duration: 0.5, ease: 'power2.inOut' }, '-=0.35')
-          .from(
-            '.hero-lede, .hero-actions, .hero-facts',
-            { y: 22, opacity: 0, duration: 0.6, stagger: 0.1 },
-            '-=0.3',
-          )
-      })
-
-      return () => mm.revert()
-    },
-    { scope },
-  )
-
-  const buttonEnter = contextSafe((event) => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    gsap.to(event.currentTarget, { y: -3, duration: 0.25, ease: 'power2.out' })
-  })
-
-  const buttonLeave = contextSafe((event) => {
-    gsap.to(event.currentTarget, { y: 0, duration: 0.35, ease: 'power2.out' })
+    gsap
+      .timeline({ defaults: { ease: 'power3.out' } })
+      .from('.ht-inner', { yPercent: 115, duration: 0.85, stagger: 0.07 }, 0.1)
+      .to(stroke, { strokeDashoffset: 0, duration: 0.5, ease: 'power2.inOut' }, '-=0.35')
+      .from(
+        '.hero-lede, .hero-actions, .hero-facts',
+        { y: 22, opacity: 0, duration: 0.6, stagger: 0.1 },
+        '-=0.3',
+      )
   })
 
   return (
@@ -81,20 +62,10 @@ const HeroSection = ({ profile }) => {
           <p className='hero-lede'>{profile.spotlightBody}</p>
 
           <div className='hero-actions'>
-            <a
-              className='btn btn-primary'
-              href='#projects'
-              onMouseEnter={buttonEnter}
-              onMouseLeave={buttonLeave}
-            >
+            <a className='btn btn-primary' href='#projects'>
               {profile.ctaPrimary}
             </a>
-            <a
-              className='btn btn-ghost'
-              href='#contact'
-              onMouseEnter={buttonEnter}
-              onMouseLeave={buttonLeave}
-            >
+            <a className='btn btn-ghost' href='#contact'>
               {profile.ctaSecondary}
             </a>
           </div>

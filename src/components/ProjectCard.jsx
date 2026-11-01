@@ -1,7 +1,4 @@
-import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import { gsap } from '../lib/gsap'
-import { chipTone } from '../lib/chipTone'
+import StackChips from './StackChips'
 
 // Projects are presented as numbered detail views of the drawing:
 // DETAIL A, DETAIL B, … — the reference letter comes from the grid order.
@@ -16,22 +13,10 @@ const ProjectCard = ({
   repoUrl,
   featured,
 }) => {
-  const scope = useRef(null)
-  const { contextSafe } = useGSAP({ scope })
-
   const links = [
     demoUrl ? { href: demoUrl, label: 'Live demo' } : null,
     repoUrl ? { href: repoUrl, label: 'Repository' } : null,
   ].filter(Boolean)
-
-  const hoverIn = contextSafe(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-    gsap.to(scope.current, { x: -3, y: -3, duration: 0.3, ease: 'power2.out' })
-  })
-
-  const hoverOut = contextSafe(() => {
-    gsap.to(scope.current, { x: 0, y: 0, duration: 0.4, ease: 'power2.out' })
-  })
 
   // The whole card opens the live demo (falling back to the repository when
   // there isn't one); clicks on the inner links keep their own destination
@@ -45,10 +30,7 @@ const ProjectCard = ({
 
   return (
     <article
-      ref={scope}
       className={`detail-card${cardTarget ? ' detail-card-clickable' : ''}`}
-      onMouseEnter={hoverIn}
-      onMouseLeave={hoverOut}
       onClick={openCardTarget}
     >
       <div className='detail-head'>
@@ -63,13 +45,7 @@ const ProjectCard = ({
       <h3>{title}</h3>
       <p>{summary}</p>
 
-      <ul className='chip-row' aria-label={`${title} technology stack`}>
-        {stack.map((item) => (
-          <li key={item} style={{ '--chip-color': `var(--tone-${chipTone(item)})` }}>
-            {item}
-          </li>
-        ))}
-      </ul>
+      <StackChips items={stack} label={`${title} technology stack`} />
 
       <div className='detail-links'>
         {links.map((link) => (

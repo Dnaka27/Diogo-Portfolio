@@ -213,7 +213,8 @@
   transition:
     background-color 160ms ease,
     color 160ms ease,
-    box-shadow 160ms ease;
+    box-shadow 160ms ease,
+    transform 300ms var(--ease-out);
 }
 
 .btn-primary {
@@ -415,11 +416,13 @@
   border: 1.5px solid var(--ink);
   border-radius: 2px;
   box-shadow: 6px 6px 0 var(--draft-soft);
+  transition:
+    border-color 160ms ease,
+    transform 350ms var(--ease-out);
 }
 
 .detail-card-clickable {
   cursor: pointer;
-  transition: border-color 160ms ease;
 }
 
 .detail-card-clickable:hover {
@@ -804,6 +807,18 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--graphite);
+}
+
+/* ── Hover lift ── */
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .btn:hover {
+    transform: translateY(-3px);
+  }
+
+  .detail-card:hover {
+    transform: translate(-3px, -3px);
+  }
 }
 
 /* ── Motion safety ── */
