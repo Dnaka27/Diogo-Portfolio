@@ -99,7 +99,6 @@ const BackgroundSection = ({ paths }) => {
       <div className='wrap section-pad'>
         <p className='crumb'>Fig. 2 · Two routes</p>
         <h2 className='section-title'>Background</h2>
-        <p className='lede'>What I studied, and where I put it to work.</p>
 
         <div className='routes'>
           {paths.map((path) => (
