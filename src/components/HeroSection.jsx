@@ -70,14 +70,16 @@ const HeroSection = ({ profile }) => {
             </a>
           </div>
 
-          <ul className='hero-facts'>
-            <li>
-              Based in <strong>{profile.location}</strong>
-            </li>
-            <li>
-              Open to <strong>{profile.availability}</strong>
-            </li>
-          </ul>
+          <dl className='hero-facts'>
+            <div>
+              <dt>Based in</dt>
+              <dd>{profile.location}</dd>
+            </div>
+            <div>
+              <dt>Open to</dt>
+              <dd>{profile.availability}</dd>
+            </div>
+          </dl>
         </div>
 
         <PipelineDiagram stages={profile.pipeline} />
