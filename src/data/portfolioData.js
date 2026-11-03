@@ -80,27 +80,23 @@ export const background = [
               { label: 'Programming logic', stack: ['C++'] },
               { label: 'Object-oriented programming', stack: ['Java'] },
               { label: 'Web development', stack: ['HTML', 'CSS', 'JavaScript', 'PHP'] },
-              { label: 'Systems development processes' },
+              { label: 'Systems development' },
             ],
           },
           {
             title: 'Data',
             topics: [
               { label: 'Databases', stack: ['SQL'] },
-              { label: 'Programming fundamentals and data science', stack: ['Python'] },
+              { label: 'Data science fundamentals', stack: ['Python'] },
             ],
           },
           {
             title: 'Infrastructure and security',
-            topics: [
-              { label: 'Operating systems (Windows and Linux)' },
-              { label: 'Computer networks' },
-              { label: 'Introduction to cybersecurity with Linux' },
-            ],
+            summary: 'Operating systems, networks and cybersecurity basics.',
           },
           {
             title: 'Management',
-            summary: 'People, process, economic and financial management, and auditing.',
+            summary: 'People, process, finance and auditing.',
           },
         ],
       },
@@ -112,8 +108,7 @@ export const background = [
           {
             title: 'Data science',
             stack: ['Python', 'R'],
-            summary:
-              'Data mining, predictive analytics, machine learning and artificial neural networks.',
+            summary: 'Data mining, predictive analytics, ML and neural networks.',
           },
           {
             title: 'Infrastructure',
@@ -121,12 +116,11 @@ export const background = [
           },
           {
             title: 'Applied AI',
-            summary:
-              'AI in business, process automation with RPA and autonomous vehicles, supporting decisions in healthcare, finance, industry and technology.',
+            summary: 'AI in business, RPA and decision support.',
           },
           {
             title: 'Management',
-            summary: 'Business intelligence and strategy.',
+            summary: 'BI and strategy.',
           },
         ],
       },
@@ -142,36 +136,27 @@ export const background = [
         title: 'BI Analyst and Data Engineer',
         org: 'Equal BI',
         place: 'Florianópolis · Hybrid',
-        context:
-          "ABC EVO: analytics platform for Latin America's largest gym management software, serving 2,000+ gyms.",
+        context: 'ABC EVO: analytics for 2,000+ gyms across Latin America.',
         subjects: [
           {
             title: 'Data engineering',
             topics: [
-              { label: 'Built ETL pipelines orchestrated on the cloud', stack: ['SQL', 'Python', 'Azure'] },
-              {
-                label: 'Implemented async ingestion from Meta Ads and Kommo CRM APIs into the Bronze layer of a Medallion Architecture',
-              },
-              { label: 'Automated data validation and monitoring', stack: ['PySpark', 'Pandas'] },
+              { label: 'Cloud ETL pipelines', stack: ['SQL', 'Python', 'Azure'] },
+              { label: 'Async API ingestion into a Medallion Bronze layer' },
+              { label: 'Data validation and monitoring', stack: ['PySpark', 'Pandas'] },
             ],
           },
           {
             title: 'Cloud',
             topics: [
-              {
-                label: 'Optimized ETL code, cutting VM execution time and lowering cloud costs',
-                stack: ['Azure Virtual Machines'],
-              },
-              {
-                label: 'Integrated and managed data across cloud platforms',
-                stack: ['GCP', 'BigQuery', 'Compute Engine'],
-              },
+              { label: 'VM runtime and cost optimization', stack: ['Azure Virtual Machines'] },
+              { label: 'Multi-cloud data integration', stack: ['GCP', 'BigQuery', 'Compute Engine'] },
             ],
           },
           {
             title: 'BI',
             topics: [
-              { label: 'Modeled data and built dashboards', stack: ['DAX', 'Power BI'] },
+              { label: 'Data modeling and dashboards', stack: ['DAX', 'Power BI'] },
             ],
           },
         ],
@@ -182,21 +167,21 @@ export const background = [
         title: 'Data Engineer and Systems Analyst',
         org: 'Ilha Service',
         place: 'Florianópolis · On-site',
-        context: 'Client: SES/SC, Santa Catarina State Health Department.',
+        context: 'Client: Santa Catarina State Health Department.',
         subjects: [
           {
             title: 'Data engineering',
             topics: [
-              { label: 'Developed ETL pipelines integrating REST APIs and databases', stack: ['Python', 'PostgreSQL'] },
-              { label: 'Implemented event-driven ingestion with producers and consumers', stack: ['Kafka'] },
-              { label: 'Orchestrated pipelines', stack: ['Airflow', 'Pentaho'] },
-              { label: 'Collected data through web scraping', stack: ['Requests', 'BeautifulSoup'] },
+              { label: 'ETL from REST APIs', stack: ['Python', 'PostgreSQL'] },
+              { label: 'Event-driven ingestion', stack: ['Kafka'] },
+              { label: 'Orchestration', stack: ['Airflow', 'Pentaho'] },
+              { label: 'Web scraping', stack: ['Requests', 'BeautifulSoup'] },
             ],
           },
           {
             title: 'BI',
             topics: [
-              { label: 'Processed data and built views and aggregate tables', stack: ['Pandas', 'PySpark', 'Power BI'] },
+              { label: 'Views and aggregate tables', stack: ['Pandas', 'PySpark', 'Power BI'] },
             ],
           },
         ],
