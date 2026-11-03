@@ -489,12 +489,13 @@
   list-style: none;
 }
 
+/* Solid fill: tones are dark in light mode and pale in dark mode, so the
+   card color reads on top of them in both themes. */
 .chip-row li {
   padding: 0.28rem 0.6rem;
-  border: 1px solid var(--chip-color, var(--draft));
   border-radius: 2px;
-  color: var(--chip-color, var(--draft));
-  background: color-mix(in srgb, var(--chip-color, var(--draft)) 14%, transparent);
+  color: var(--card);
+  background: var(--chip-color, var(--draft));
   font-family: var(--font-mono);
   font-size: 0.66rem;
   font-weight: 600;
@@ -697,8 +698,8 @@
 }
 
 .chip-row-compact li {
-  padding: 0.05rem 0.4rem;
-  font-size: 0.6rem;
+  padding: 0.1rem 0.45rem;
+  font-size: 0.62rem;
   letter-spacing: 0.04em;
 }
 
