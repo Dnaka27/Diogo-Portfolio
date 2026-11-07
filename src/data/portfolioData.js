@@ -14,15 +14,15 @@ export const profile = {
 
 export const portfolioProjects = [
   {
-    id: 'repo-explainer',
-    title: 'Repo Explainer',
+    id: 'cyber-attacks',
+    title: 'Cyber Attacks Dashboard',
     summary:
-      'A tool that analyzes a public GitHub repository and uses Google Gemini to generate a flowchart, an architecture diagram and a summary of how the codebase works.',
-    category: 'AI Tooling',
+      'An interactive dashboard analyzing the financial and market impact of cyber attacks from a Kaggle dataset, with client-side filtering across attack vectors, sectors and stock market reaction.',
+    category: 'Data Visualization',
     year: '2026',
-    stack: ['Python', 'FastAPI', 'React', 'Google Gemini'],
-    demoUrl: 'https://repo-explainer-weld.vercel.app',
-    repoUrl: 'https://github.com/Dnaka27/repo-explainer',
+    stack: ['React', 'Vite', 'Plotly.js'],
+    demoUrl: 'https://cyber-attacks-dashboard.vercel.app',
+    repoUrl: 'https://github.com/Dnaka27/cyber-attacks-dashboard',
     featured: true,
   },
   {
@@ -50,15 +50,15 @@ export const portfolioProjects = [
     featured: false,
   },
   {
-    id: 'cyber-attacks',
-    title: 'Cyber Attacks Dashboard',
+    id: 'repo-explainer',
+    title: 'Repo Explainer',
     summary:
-      'An interactive dashboard analyzing the financial and market impact of cyber attacks from a Kaggle dataset, with client-side filtering across attack vectors, sectors and stock market reaction.',
-    category: 'Data Visualization',
+      'A tool that analyzes a public GitHub repository and uses Google Gemini to generate a flowchart, an architecture diagram and a summary of how the codebase works.',
+    category: 'AI Tooling',
     year: '2026',
-    stack: ['React', 'Vite', 'Plotly.js'],
-    demoUrl: 'https://cyber-attacks-dashboard.vercel.app',
-    repoUrl: 'https://github.com/Dnaka27/cyber-attacks-dashboard',
+    stack: ['Python', 'FastAPI', 'React', 'Google Gemini'],
+    demoUrl: 'https://repo-explainer-weld.vercel.app',
+    repoUrl: 'https://github.com/Dnaka27/repo-explainer',
     featured: true,
   },
 ]
